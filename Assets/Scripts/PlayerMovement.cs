@@ -6,9 +6,9 @@ using UnityEditor;
 
 public class PlayerMovement : MonoBehaviour
 {
-        public static bool spinning, sliding, isGrounded;
+    public static bool spinning, sliding, isGrounded;
     private Vector3 movementInput;
-    private CapsuleCollider playerCollider;
+    public CapsuleCollider playerCollider;
     public LayerMask ground;
 
     [SerializeField] private Rigidbody playerBody;
@@ -16,17 +16,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private Animator animcharacter;
     // Start is called before the first frame update
     void Awake()
     {
-        playerCollider = GetComponent<CapsuleCollider>();
-        spinning = sliding = false;
+        isGrounded = spinning = sliding = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         movementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        Grounded();
         MovePlayer();
         ActionsPlayer();
     }
@@ -36,14 +37,18 @@ public class PlayerMovement : MonoBehaviour
         if(movementInput.magnitude > 0)
         {
             movementInput.Normalize();
+            animcharacter.SetBool("walk", true);
             transform.Translate(movementInput *  speed * Time.deltaTime, Space.World);
 
             Quaternion toRotation = Quaternion.LookRotation(movementInput, Vector3.up);
             this.transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
+        else
+            animcharacter.SetBool("walk", false);
 
-        if(Input.GetKeyDown(KeyCode.Space) && Grounded())
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
+            animcharacter.SetTrigger("jump");
             playerBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
@@ -53,12 +58,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             spinning = true;
+            animcharacter.SetTrigger("spin");
             StartCoroutine(ActionTime(spinning));
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Grounded())
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             sliding = true;
+            animcharacter.SetTrigger("slide");
             StartCoroutine(ActionTime(sliding));
         }
     }

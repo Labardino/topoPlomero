@@ -12,22 +12,23 @@ public class Breakable : MonoBehaviour
         vectorPoint = other.contacts[0].point;
         angleCollision= Vector3.Angle(vectorPoint - this.transform.position, other.transform.up);
         Debug.Log(angleCollision);
+
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             //jump above
-            if (angleCollision < 60 && PlayerMovement.isGrounded)
+            if (angleCollision < 60 && !PlayerMovement.isGrounded)
             {
-                other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 10, ForceMode.Impulse);
+                other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 8, ForceMode.Impulse);
                 Destroy(this.gameObject);
             }
             if (PlayerMovement.spinning || PlayerMovement.sliding)
             {
-                Debug.Log("Spin collision");
+                Debug.Log("Action collision");
                 Destroy(this.gameObject);
             }
-            if (angleCollision > 125 && PlayerMovement.isGrounded)
+            if (angleCollision > 125 && !PlayerMovement.isGrounded)
             {
-                other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * -3, ForceMode.Impulse);
+                other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * -1, ForceMode.Impulse);
                 Destroy(this.gameObject);
             }
         }

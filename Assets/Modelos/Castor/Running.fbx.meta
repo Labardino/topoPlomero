@@ -48,25 +48,25 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
+      keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.21344854
+      - time: 0.2513494
         functionName: stepSound
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 6a372615e1a258448a1641a233b11c6b, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.7134485
+      - time: 0.71636397
         functionName: stepSound
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 6a372615e1a258448a1641a233b11c6b, type: 3}
@@ -80,7 +80,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 10
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -499,292 +499,292 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:g0
       parentName: Running(Clone)
-      position: {x: -1.1707362, y: -494.4244, z: 4.1784176e-13}
+      position: {x: -0.11707362, y: -49.44244, z: 4.1784176e-14}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 0.01, y: 0.01, z: 0.01}
     - name: Beaver_leader_01:Hips
       parentName: Running(Clone)
-      position: {x: 0.000000037252903, y: 4.243534, z: -0.55482256}
+      position: {x: 0.0000000037252903, y: 0.42435342, z: -0.055482257}
       rotation: {x: -7.395571e-32, y: -2.7755576e-16, z: -2.7755576e-16, w: 1}
       scale: {x: 0.99999994, y: 1, z: 0.99999994}
     - name: Beaver_leader_01:LeftUpLeg
       parentName: Beaver_leader_01:Hips
-      position: {x: -1.1423763, y: -0.46185404, z: 0.114950165}
+      position: {x: -0.11423763, y: -0.046185404, z: 0.0114950165}
       rotation: {x: 0.003213152, y: 0.004417742, z: 0.9959017, w: -0.090277396}
       scale: {x: 1, y: 1, z: 1.0000001}
     - name: Beaver_leader_01:LeftLeg
       parentName: Beaver_leader_01:LeftUpLeg
-      position: {x: 0.00000001472328, y: 1.6659468, z: 4.4828016e-10}
+      position: {x: 0.000000001472328, y: 0.16659468, z: 4.4828016e-11}
       rotation: {x: -0.23377055, y: -0.6044552, z: -0.15137671, w: 0.74637157}
       scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
     - name: Beaver_leader_01:LeftFoot
       parentName: Beaver_leader_01:LeftLeg
-      position: {x: -0.000000006692763, y: 1.5545787, z: -0.000000040959115}
+      position: {x: -6.692763e-10, y: 0.15545787, z: -0.0000000040959116}
       rotation: {x: 0.49659076, y: 0.4027265, z: -0.43791562, w: 0.6320118}
       scale: {x: 1.0000005, y: 1.0000004, z: 0.9999999}
     - name: Beaver_leader_01:LeftToeBase
       parentName: Beaver_leader_01:LeftFoot
-      position: {x: -3.772474e-10, y: 1.996691, z: -5.379059e-10}
+      position: {x: -3.772474e-11, y: 0.19966911, z: -5.379059e-11}
       rotation: {x: 0.11888495, y: -0.011795589, z: -0.09802695, w: 0.98798686}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: Beaver_leader_01:LeftToe_End
       parentName: Beaver_leader_01:LeftToeBase
-      position: {x: 3.0851183e-10, y: 0.9035433, z: -2.1630212e-10}
+      position: {x: 3.0851183e-11, y: 0.09035433, z: -2.1630212e-11}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:RightUpLeg
       parentName: Beaver_leader_01:Hips
-      position: {x: 1.1423763, y: -0.46185404, z: 0.080338344}
+      position: {x: 0.11423763, y: -0.046185404, z: 0.008033834}
       rotation: {x: -0.007595176, y: 0.010241124, z: 0.99587387, w: 0.089847796}
       scale: {x: 1.0000002, y: 1.0000002, z: 1}
     - name: Beaver_leader_01:RightLeg
       parentName: Beaver_leader_01:RightUpLeg
-      position: {x: 0.000000017858808, y: 1.6675054, z: 0.000000002610224}
+      position: {x: 0.0000000017858808, y: 0.16675054, z: 2.610224e-10}
       rotation: {x: -0.23818848, y: 0.5921746, z: 0.14744149, w: 0.7555505}
       scale: {x: 1.0000002, y: 1, z: 1.0000002}
     - name: Beaver_leader_01:RightFoot
       parentName: Beaver_leader_01:RightLeg
-      position: {x: 0.000000011777711, y: 1.5544487, z: -2.1097873e-10}
+      position: {x: 0.0000000011777711, y: 0.15544488, z: -2.1097873e-11}
       rotation: {x: 0.5034589, y: -0.39348692, z: 0.4345843, w: 0.63469183}
       scale: {x: 0.99999994, y: 1, z: 1}
     - name: Beaver_leader_01:RightToeBase
       parentName: Beaver_leader_01:RightFoot
-      position: {x: -0.000000021421657, y: 2.0075538, z: 0.000000033571894}
+      position: {x: -0.0000000021421658, y: 0.20075539, z: 0.0000000033571894}
       rotation: {x: 0.117879316, y: 0.011684327, z: 0.097942844, w: 0.988117}
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: Beaver_leader_01:RightToe_End
       parentName: Beaver_leader_01:RightToeBase
-      position: {x: 0.0000000012002744, y: 0.87716806, z: 7.878662e-10}
+      position: {x: 1.2002745e-10, y: 0.08771681, z: 7.878662e-11}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:Spine
       parentName: Beaver_leader_01:Hips
-      position: {x: -0, y: 0.828858, z: 0.079779774}
+      position: {x: -0, y: 0.0828858, z: 0.007977977}
       rotation: {x: 0.047960166, y: -0, z: -2.646978e-23, w: 0.9988493}
       scale: {x: 1, y: 1, z: 1.0000001}
     - name: Beaver_leader_01:Spine1
       parentName: Beaver_leader_01:Spine
-      position: {x: -0, y: 0.9714704, z: 6.9159345e-10}
+      position: {x: -0, y: 0.09714704, z: 6.9159345e-11}
       rotation: {x: -0.000000026077032, y: -0, z: 3.3087225e-23, w: 1}
       scale: {x: 1, y: 0.99999994, z: 0.9999999}
     - name: Beaver_leader_01:Spine2
       parentName: Beaver_leader_01:Spine1
-      position: {x: -0, y: 1.1102521, z: -1.9124702e-10}
+      position: {x: -0, y: 0.111025214, z: -1.9124702e-11}
       rotation: {x: -0, y: -0, z: -1.6543612e-24, w: 1}
       scale: {x: 1.0000001, y: 1, z: 1}
     - name: Beaver_leader_01:Neck
       parentName: Beaver_leader_01:Spine2
-      position: {x: -0, y: 1.2490327, z: 0.000000055502426}
+      position: {x: -0, y: 0.12490328, z: 0.0000000055502425}
       rotation: {x: -0.04796014, y: 2.646978e-23, z: -1.323489e-23, w: 0.9988493}
       scale: {x: 0.99999994, y: 1.0000001, z: 1.0000002}
     - name: Beaver_leader_01:Head
       parentName: Beaver_leader_01:Neck
-      position: {x: -0, y: 0.67892015, z: -0.03868878}
+      position: {x: -0, y: 0.067892015, z: -0.003868878}
       rotation: {x: -0, y: -0, z: -5.916457e-31, w: 1}
       scale: {x: 1, y: 0.9999998, z: 0.9999999}
     - name: Beaver_leader_01:HeadTop_End
       parentName: Beaver_leader_01:Head
-      position: {x: -0, y: 4.129774, z: -0.23533836}
+      position: {x: -0, y: 0.41297743, z: -0.023533836}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:LeftShoulder
       parentName: Beaver_leader_01:Spine2
-      position: {x: -0.7200944, y: 0.97636855, z: 0.018949142}
+      position: {x: -0.07200944, y: 0.097636856, z: 0.0018949142}
       rotation: {x: 0.5824255, y: -0.40622422, z: 0.5681586, w: 0.41588265}
       scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
     - name: Beaver_leader_01:LeftArm
       parentName: Beaver_leader_01:LeftShoulder
-      position: {x: -6.7251205e-10, y: 1.542837, z: 3.4850234e-10}
+      position: {x: -6.7251205e-11, y: 0.1542837, z: 3.4850234e-11}
       rotation: {x: -0.13914636, y: 0.003230064, z: -0.0012907977, w: 0.9902657}
       scale: {x: 1.0000004, y: 0.9999999, z: 1.0000002}
     - name: Beaver_leader_01:LeftForeArm
       parentName: Beaver_leader_01:LeftArm
-      position: {x: -0.0000000105260165, y: 2.1054964, z: -0.000000059424043}
+      position: {x: -0.0000000010526017, y: 0.21054964, z: -0.0000000059424043}
       rotation: {x: -0.02301733, y: 0.0048770756, z: -0.024540974, w: 0.99942195}
       scale: {x: 0.9999996, y: 1.0000002, z: 0.9999999}
     - name: Beaver_leader_01:LeftHand
       parentName: Beaver_leader_01:LeftForeArm
-      position: {x: -0.000000016725185, y: 1.2029039, z: -0.00000003907802}
+      position: {x: -0.0000000016725185, y: 0.12029039, z: -0.000000003907802}
       rotation: {x: 0.09024638, y: 0.04281316, z: 0.029882766, w: 0.99455}
       scale: {x: 1.0000001, y: 0.99999976, z: 0.99999976}
     - name: Beaver_leader_01:LeftHandThumb1
       parentName: Beaver_leader_01:LeftHand
-      position: {x: 0.2087286, y: 0.2971512, z: 0.22016214}
+      position: {x: 0.02087286, y: 0.02971512, z: 0.022016214}
       rotation: {x: 0.0627123, y: 0.027410852, z: -0.3405809, w: 0.9377209}
       scale: {x: 1.0000001, y: 0.99999964, z: 0.9999996}
     - name: Beaver_leader_01:LeftHandThumb2
       parentName: Beaver_leader_01:LeftHandThumb1
-      position: {x: 0.026869915, y: 0.33866528, z: 0.000000012012502}
+      position: {x: 0.0026869916, y: 0.03386653, z: 0.0000000012012502}
       rotation: {x: -0.00057248387, y: -0.0000017918642, z: -0.0040117996, w: 0.9999918}
       scale: {x: 1, y: 1.0000004, z: 1.0000004}
     - name: Beaver_leader_01:LeftHandThumb3
       parentName: Beaver_leader_01:LeftHandThumb2
-      position: {x: -0.00421605, y: 0.36438045, z: 0.0000000015605173}
+      position: {x: -0.000421605, y: 0.036438044, z: 1.5605173e-10}
       rotation: {x: -0.02610022, y: -0.00000012242275, z: -0.00000004500224, w: 0.9996593}
       scale: {x: 1.0000001, y: 1.0000004, z: 1.0000004}
     - name: Beaver_leader_01:LeftHandThumb4
       parentName: Beaver_leader_01:LeftHandThumb3
-      position: {x: -0.02265387, y: 0.29810157, z: 0.00000000372263}
+      position: {x: -0.002265387, y: 0.029810159, z: 3.72263e-10}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:LeftHandIndex1
       parentName: Beaver_leader_01:LeftHand
-      position: {x: 0.27098492, y: 0.7394093, z: 0.0030400539}
+      position: {x: 0.027098492, y: 0.07394093, z: 0.0003040054}
       rotation: {x: 0.04448536, y: -0.0045708506, z: -0.052044153, w: 0.997643}
       scale: {x: 1, y: 0.99999994, z: 1.0000001}
     - name: Beaver_leader_01:LeftHandIndex2
       parentName: Beaver_leader_01:LeftHandIndex1
-      position: {x: -0.008276002, y: 0.33583286, z: 0.000000026355167}
+      position: {x: -0.0008276002, y: 0.033583287, z: 0.0000000026355167}
       rotation: {x: 0.035688166, y: 0.00039934175, z: 0.021236146, w: 0.99913734}
       scale: {x: 1.0000004, y: 1.0000006, z: 1.0000001}
     - name: Beaver_leader_01:LeftHandIndex3
       parentName: Beaver_leader_01:LeftHandIndex2
-      position: {x: 0.00832909, y: 0.25886732, z: -0.0000000014374202}
+      position: {x: 0.00083290896, y: 0.025886733, z: -1.4374202e-10}
       rotation: {x: -0.03871598, y: -0.0006940667, z: -0.008565248, w: 0.9992134}
       scale: {x: 0.99999976, y: 0.9999997, z: 0.99999976}
     - name: Beaver_leader_01:LeftHandIndex4
       parentName: Beaver_leader_01:LeftHandIndex3
-      position: {x: -0.000053096286, y: 0.22429195, z: 0.000000012053778}
+      position: {x: -0.0000053096287, y: 0.022429196, z: 0.0000000012053779}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:LeftHandRing1
       parentName: Beaver_leader_01:LeftHand
-      position: {x: -0.30101797, y: 0.69054234, z: 0.028575407}
+      position: {x: -0.030101797, y: 0.06905424, z: 0.0028575407}
       rotation: {x: -0.02619191, y: -0.0027477061, z: 0.04902635, w: 0.9984502}
       scale: {x: 1, y: 1.0000002, z: 1.0000004}
     - name: Beaver_leader_01:LeftHandRing2
       parentName: Beaver_leader_01:LeftHandRing1
-      position: {x: -0.00597906, y: 0.22317044, z: 0.0000000043998085}
+      position: {x: -0.000597906, y: 0.022317044, z: 4.3998086e-10}
       rotation: {x: 0.025211865, y: -0.00087076076, z: 0.02274942, w: 0.9994229}
       scale: {x: 1, y: 0.9999997, z: 0.9999999}
     - name: Beaver_leader_01:LeftHandRing3
       parentName: Beaver_leader_01:LeftHandRing2
-      position: {x: 0.0042008655, y: 0.19151813, z: -2.2617686e-10}
+      position: {x: 0.00042008655, y: 0.019151812, z: -2.2617686e-11}
       rotation: {x: -0.039524946, y: -0.0007219451, z: -0.0023316501, w: 0.9992156}
       scale: {x: 1.0000004, y: 1.0000007, z: 1.0000004}
     - name: Beaver_leader_01:LeftHandRing4
       parentName: Beaver_leader_01:LeftHandRing3
-      position: {x: 0.0017781926, y: 0.13861537, z: 0.0000000015648538}
+      position: {x: 0.00017781927, y: 0.013861537, z: 1.5648538e-10}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:LeftHandMiddle1
       parentName: Beaver_leader_01:LeftHand
-      position: {x: 0.030033095, y: 0.78364336, z: -0.053430565}
+      position: {x: 0.0030033095, y: 0.078364335, z: -0.0053430567}
       rotation: {x: 0.020542959, y: 0.0057283123, z: 0.03287798, w: 0.9992318}
       scale: {x: 0.9999999, y: 1.0000001, z: 1.0000002}
     - name: Beaver_leader_01:LeftHandMiddle2
       parentName: Beaver_leader_01:LeftHandMiddle1
-      position: {x: -0.002996096, y: 0.27671638, z: -0.00000001331557}
+      position: {x: -0.0002996096, y: 0.027671639, z: -0.000000001331557}
       rotation: {x: 0.028333152, y: 0.00066222466, z: 0.011976523, w: 0.99952656}
       scale: {x: 1.0000002, y: 1.0000005, z: 1.0000001}
     - name: Beaver_leader_01:LeftHandMiddle3
       parentName: Beaver_leader_01:LeftHandMiddle2
-      position: {x: 0.003951956, y: 0.25391233, z: 3.550782e-10}
+      position: {x: 0.00039519562, y: 0.025391234, z: 3.550782e-11}
       rotation: {x: -0.030720195, y: -0.0009879014, z: -0.009888579, w: 0.99947864}
       scale: {x: 1, y: 0.9999998, z: 0.99999994}
     - name: Beaver_leader_01:LeftHandMiddle4
       parentName: Beaver_leader_01:LeftHandMiddle3
-      position: {x: -0.0009558545, y: 0.13871615, z: 0.0000000017163204}
+      position: {x: -0.00009558545, y: 0.013871615, z: 1.7163204e-10}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:RightShoulder
       parentName: Beaver_leader_01:Spine2
-      position: {x: 0.7200944, y: 0.9777601, z: 0.033406302}
+      position: {x: 0.07200944, y: 0.09777601, z: 0.0033406303}
       rotation: {x: 0.58725876, y: 0.4032322, z: -0.56245404, w: 0.41973385}
       scale: {x: 1, y: 0.9999999, z: 0.99999976}
     - name: Beaver_leader_01:RightArm
       parentName: Beaver_leader_01:RightShoulder
-      position: {x: 0.000000002435066, y: 1.5428369, z: -0.000000022144931}
+      position: {x: 2.435066e-10, y: 0.15428369, z: -0.0000000022144933}
       rotation: {x: -0.13752794, y: -0.0008961706, z: -0.011358916, w: 0.9904324}
       scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
     - name: Beaver_leader_01:RightForeArm
       parentName: Beaver_leader_01:RightArm
-      position: {x: 0.0000000025905735, y: 2.0968845, z: 0.000000032690828}
+      position: {x: 2.5905736e-10, y: 0.20968845, z: 0.0000000032690828}
       rotation: {x: -0.02383686, y: -0.005513631, z: 0.024766926, w: 0.9993938}
       scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
     - name: Beaver_leader_01:RightHand
       parentName: Beaver_leader_01:RightForeArm
-      position: {x: 0.000000012913782, y: 1.1996608, z: 0.000000021348045}
+      position: {x: 0.0000000012913782, y: 0.11996608, z: 0.0000000021348046}
       rotation: {x: 0.100016, y: -0.023781784, z: -0.025970183, w: 0.99436253}
       scale: {x: 1, y: 1, z: 1.0000001}
     - name: Beaver_leader_01:RightHandThumb1
       parentName: Beaver_leader_01:RightHand
-      position: {x: -0.22112915, y: 0.29272777, z: 0.20433529}
+      position: {x: -0.022112915, y: 0.029272778, z: 0.020433528}
       rotation: {x: 0.04600563, y: -0.02771725, z: 0.31773236, w: 0.946658}
       scale: {x: 1.0000004, y: 1.0000007, z: 1.0000004}
     - name: Beaver_leader_01:RightHandThumb2
       parentName: Beaver_leader_01:RightHandThumb1
-      position: {x: -0.034732774, y: 0.33414337, z: -0.000000011047775}
+      position: {x: -0.0034732774, y: 0.033414338, z: -0.0000000011047775}
       rotation: {x: -0.0062298714, y: 0.00015384139, z: 0.026113437, w: 0.9996396}
       scale: {x: 1, y: 0.9999998, z: 1}
     - name: Beaver_leader_01:RightHandThumb3
       parentName: Beaver_leader_01:RightHandThumb2
-      position: {x: 0.010667979, y: 0.3769252, z: -0.0000000070962947}
+      position: {x: 0.0010667979, y: 0.03769252, z: -7.0962947e-10}
       rotation: {x: -0.003548606, y: 0.00000004452442, z: 0.000000009891224, w: 0.9999937}
       scale: {x: 1.0000001, y: 1.0000002, z: 1}
     - name: Beaver_leader_01:RightHandThumb4
       parentName: Beaver_leader_01:RightHandThumb3
-      position: {x: 0.024064772, y: 0.31288445, z: 0.00000001260565}
+      position: {x: 0.0024064772, y: 0.031288445, z: 0.000000001260565}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:RightHandIndex1
       parentName: Beaver_leader_01:RightHand
-      position: {x: -0.27715465, y: 0.76843584, z: 0.01678354}
+      position: {x: -0.027715465, y: 0.07684358, z: 0.001678354}
       rotation: {x: 0.005639291, y: 0.00034303023, z: 0.060707092, w: 0.9981396}
       scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
     - name: Beaver_leader_01:RightHandIndex2
       parentName: Beaver_leader_01:RightHandIndex1
-      position: {x: 0.011323549, y: 0.29818657, z: 0.000000009389324}
+      position: {x: 0.001132355, y: 0.029818658, z: 9.389324e-10}
       rotation: {x: 0.03285647, y: 0.0002725879, z: -0.030400658, w: 0.99899757}
       scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
     - name: Beaver_leader_01:RightHandIndex3
       parentName: Beaver_leader_01:RightHandIndex2
-      position: {x: -0.009594547, y: 0.2761596, z: 0.00000000632439}
+      position: {x: -0.0009594547, y: 0.027615963, z: 6.32439e-10}
       rotation: {x: -0.03931509, y: 0.00067214994, z: 0.0060874573, w: 0.9992081}
       scale: {x: 0.99999994, y: 0.9999998, z: 0.99999994}
     - name: Beaver_leader_01:RightHandIndex4
       parentName: Beaver_leader_01:RightHandIndex3
-      position: {x: -0.0017290472, y: 0.23042423, z: 0.0000000042456385}
+      position: {x: -0.00017290472, y: 0.023042424, z: 4.2456386e-10}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:RightHandRing1
       parentName: Beaver_leader_01:RightHand
-      position: {x: 0.27387542, y: 0.6997272, z: 0.040512256}
+      position: {x: 0.027387543, y: 0.069972716, z: 0.0040512257}
       rotation: {x: -0.09127929, y: 0.0045148083, z: -0.036057103, w: 0.9951621}
       scale: {x: 1.0000005, y: 1.0000004, z: 1.0000002}
     - name: Beaver_leader_01:RightHandRing2
       parentName: Beaver_leader_01:RightHandRing1
-      position: {x: 0.008183012, y: 0.17260426, z: 0.000000013094973}
+      position: {x: 0.00081830117, y: 0.017260427, z: 0.0000000013094973}
       rotation: {x: 0.026202122, y: 0.0030393342, z: -0.03541408, w: 0.9990246}
       scale: {x: 0.99999994, y: 1.0000001, z: 1.0000004}
     - name: Beaver_leader_01:RightHandRing3
       parentName: Beaver_leader_01:RightHandRing2
-      position: {x: -0.006100104, y: 0.20970874, z: 0.0000000028508274}
+      position: {x: -0.0006100104, y: 0.020970874, z: 2.8508274e-10}
       rotation: {x: -0.039659765, y: 0.00088405487, z: 0.002818431, w: 0.99920887}
       scale: {x: 1.0000001, y: 0.99999994, z: 1}
     - name: Beaver_leader_01:RightHandRing4
       parentName: Beaver_leader_01:RightHandRing3
-      position: {x: -0.0020829034, y: 0.11870399, z: 0.0000000039065373}
+      position: {x: -0.00020829034, y: 0.011870399, z: 3.9065373e-10}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:RightHandMiddle1
       parentName: Beaver_leader_01:RightHand
-      position: {x: 0.0032791686, y: 0.98511136, z: -0.06463127}
+      position: {x: 0.00032791687, y: 0.09851114, z: -0.0064631267}
       rotation: {x: 0.036156252, y: -0.01522802, z: -0.010340848, w: 0.9991766}
       scale: {x: 1.0000002, y: 1.0000006, z: 1}
     - name: Beaver_leader_01:RightHandMiddle2
       parentName: Beaver_leader_01:RightHandMiddle1
-      position: {x: 0.00038853294, y: 0.20014054, z: 0.000000001310565}
+      position: {x: 0.000038853294, y: 0.020014053, z: 1.310565e-10}
       rotation: {x: 0.040340398, y: -0.000093417206, z: -0.002187441, w: 0.99918365}
       scale: {x: 1, y: 1, z: 1}
     - name: Beaver_leader_01:RightHandMiddle3
       parentName: Beaver_leader_01:RightHandMiddle2
-      position: {x: -0.002044588, y: 0.1857203, z: 2.3851254e-10}
+      position: {x: -0.00020445882, y: 0.01857203, z: 2.3851254e-11}
       rotation: {x: -0.03603553, y: -0.0002855226, z: 0.0102509195, w: 0.9992979}
       scale: {x: 1.0000001, y: 0.99999994, z: 1}
     - name: Beaver_leader_01:RightHandMiddle4
       parentName: Beaver_leader_01:RightHandMiddle3
-      position: {x: 0.0016560536, y: 0.102823496, z: 0.0000000013557799}
+      position: {x: 0.00016560536, y: 0.01028235, z: 1.35578e-10}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
@@ -794,7 +794,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 10
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1

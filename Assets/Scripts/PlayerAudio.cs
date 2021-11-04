@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+[RequireComponent(typeof(AudioSource))]
 public class PlayerAudio : MonoBehaviour
 {
-    public AudioSource stepsSound;
-    public AudioSource slidesSound;
-    public AudioSource spinsSound;
+    public AudioSource playerSound;
 
+    public AudioClip[] clipSounds;
     
     private void stepSound()
     {
-        stepsSound.Play();
+        playerSound.PlayOneShot(clipSounds[0]);
     }
     private void slideSound()
     {
-        slidesSound.Play();
+        playerSound.PlayOneShot(clipSounds[2]);
     }
     private void spinSound()
     {
-        spinsSound.Play();
+        playerSound.PlayOneShot(clipSounds[1]);
     }
 
 }

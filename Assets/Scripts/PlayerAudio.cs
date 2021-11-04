@@ -22,5 +22,15 @@ public class PlayerAudio : MonoBehaviour
     {
         playerSound.PlayOneShot(clipSounds[1]);
     }
+    private void fireSound()
+    {
+        playerSound.PlayOneShot(clipSounds[0]);
+    }
+    private void flySound()
+    {
+        playerSound.PlayOneShot(clipSounds[0]);
+    }
+
+
 
 }

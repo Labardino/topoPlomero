@@ -6,7 +6,7 @@ using UnityEditor;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public static bool spinning, sliding, isGrounded;
+    public static bool spinning, sliding, isGrounded, shouldJump;
     private Vector3 movementInput;
     public CapsuleCollider playerCollider;
     public LayerMask ground;
@@ -28,8 +28,12 @@ public class PlayerMovement : MonoBehaviour
     {
         movementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         Grounded();
-        MovePlayer();
+        JumpPlayer();
         ActionsPlayer();
+    }
+    private void FixedUpdate()
+    {
+        MovePlayer();
     }
 
     void MovePlayer()
@@ -38,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         {
             movementInput.Normalize();
             animcharacter.SetBool("walk", true);
-            transform.Translate(movementInput *  speed * Time.deltaTime, Space.World);
+            playerBody.MovePosition(transform.position + movementInput *  speed * Time.deltaTime);
 
             Quaternion toRotation = Quaternion.LookRotation(movementInput, Vector3.up);
             this.transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
@@ -46,10 +50,19 @@ public class PlayerMovement : MonoBehaviour
         else
             animcharacter.SetBool("walk", false);
 
+        if(shouldJump)
+        {
+            playerBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            animcharacter.SetTrigger("jump");
+            shouldJump = false;
+        }
+    }
+
+    void JumpPlayer()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            animcharacter.SetTrigger("jump");
-            playerBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            shouldJump = true;
         }
     }
 
@@ -64,9 +77,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            sliding = true;
-            animcharacter.SetTrigger("slide");
-            StartCoroutine(ActionTime(sliding));
+            if (isGrounded)
+            {
+                sliding = true;
+                animcharacter.SetTrigger("slide");
+                StartCoroutine(ActionTime(sliding));
+            }
         }
     }
 

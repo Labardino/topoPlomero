@@ -8,6 +8,7 @@ public class Breakable : MonoBehaviour
     private float angleCollision;
     [HideInInspector]public int cerealCounter;
     private Animator animcharacter;
+    public AnimationState jumpState;
 
 
     private void OnCollisionEnter(Collision other)
@@ -22,7 +23,6 @@ public class Breakable : MonoBehaviour
             //jump above
             if (angleCollision < 60 && !PlayerMovement.isGrounded)
             {
-                animcharacter.speed = 0.65f;
                 animcharacter.SetTrigger("jump");
                 AboveInteraction(other);
             }

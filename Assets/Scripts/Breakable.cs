@@ -5,12 +5,16 @@ using UnityEngine;
 public class Breakable : MonoBehaviour
 {
     Vector3 vectorPoint;
-    float angleCollision;
+    private float angleCollision;
+    [HideInInspector]public int cerealCounter;
+    [SerializeField] private Animator animcharacter;
+
 
     private void OnCollisionEnter(Collision other)
     {
         vectorPoint = other.contacts[0].point;
         angleCollision= Vector3.Angle(vectorPoint - this.transform.position, other.transform.up);
+        animcharacter = other.gameObject.GetComponentInChildren<Animator>();
         Debug.Log(angleCollision);
 
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -18,18 +22,16 @@ public class Breakable : MonoBehaviour
             //jump above
             if (angleCollision < 60 && !PlayerMovement.isGrounded)
             {
-                other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 8, ForceMode.Impulse);
-                Destroy(this.gameObject);
+                animcharacter.SetTrigger("jump");
+                AboveInteraction(other);
             }
             if (PlayerMovement.spinning || PlayerMovement.sliding)
             {
-                Debug.Log("Action collision");
-                Destroy(this.gameObject);
+                DestroyObject(other);
             }
             if (angleCollision > 125 && !PlayerMovement.isGrounded)
             {
-                other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * -1, ForceMode.Impulse);
-                Destroy(this.gameObject);
+                BelowInteraction(other);
             }
         }
     }
@@ -37,8 +39,24 @@ public class Breakable : MonoBehaviour
     {
         if (PlayerMovement.spinning || PlayerMovement.sliding)
         {
-            Debug.Log("Spin Stay collision");
             Destroy(this.gameObject);
         }
     }
+
+    public virtual void AboveInteraction(Collision other)
+    {
+        DestroyObject(other);
+    }
+
+    public virtual void BelowInteraction(Collision other)
+    {
+        Destroy(this.gameObject);
+    }
+
+    public virtual void DestroyObject(Collision other)
+    {
+        Destroy(this.gameObject);
+    }
+
+
 }

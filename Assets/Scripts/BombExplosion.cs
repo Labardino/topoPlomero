@@ -20,7 +20,7 @@ public class BombExplosion : MonoBehaviour
 
     public void Explosion()
     {
-        Ray raySphere = new Ray(Vector3.zero, Vector3.one);
+        //Ray raySphere = new Ray(Vector3.zero, Vector3.one);
         Collider[] collisionList;
         collisionList = Physics.OverlapSphere(transform.position, spherecastRadio);
         if(collisionList.Length>0)
@@ -28,13 +28,12 @@ public class BombExplosion : MonoBehaviour
             foreach(Collider nearby in collisionList)
             {
                 Rigidbody rb = nearby.GetComponentInParent<Rigidbody>();
-
                 if (rb)
                 {
+
                     rb.AddExplosionForce(explosionForce, transform.position, spherecastRadio);
                     rb.AddExplosionForce(explosionForce, rb.transform.position, spherecastRadio);
                 }
-                    
             }
             gameObject.SetActive(false);
         }

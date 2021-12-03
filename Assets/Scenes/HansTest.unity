@@ -156,7 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cerealCounter: 0
-  animcharacter: {fileID: 0}
 --- !u!65 &101195978
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -570,7 +569,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cerealCounter: 0
-  animcharacter: {fileID: 0}
   maxCounter: 3
 --- !u!65 &776051646
 BoxCollider:

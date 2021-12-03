@@ -12,7 +12,7 @@ public class CounterBreakable : Breakable
 
     public override void BelowInteraction(Collision other)
     {
-        other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * -2, ForceMode.Impulse);
+        other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * -3, ForceMode.Impulse);
         cerealCounter++;
         if(cerealCounter == maxCounter)
         {

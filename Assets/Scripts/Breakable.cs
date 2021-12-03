@@ -7,7 +7,7 @@ public class Breakable : MonoBehaviour
     Vector3 vectorPoint;
     private float angleCollision;
     [HideInInspector]public int cerealCounter;
-    [SerializeField] private Animator animcharacter;
+    private Animator animcharacter;
 
 
     private void OnCollisionEnter(Collision other)
@@ -22,6 +22,7 @@ public class Breakable : MonoBehaviour
             //jump above
             if (angleCollision < 60 && !PlayerMovement.isGrounded)
             {
+                animcharacter.speed = 0.65f;
                 animcharacter.SetTrigger("jump");
                 AboveInteraction(other);
             }

@@ -17,6 +17,13 @@ public class ObjectPooling : MonoBehaviour
     public int initialBullets;
     public GameObject bulletPrefab;
 
+    //CEREAL VARIABLES
+    [HideInInspector]
+    public List<GameObject> listCereals;
+    [Space]
+    public int initialCereals;
+    public GameObject cerealPrefab;
+
     //POOLING VARIABLES
     private GameObject objectActive;
     private bool found;
@@ -34,6 +41,7 @@ public class ObjectPooling : MonoBehaviour
     {
         InitialBombs();
         InitialBullets();
+        InitialCereals();
     }
 
     public void InitialBombs()
@@ -51,6 +59,15 @@ public class ObjectPooling : MonoBehaviour
         {
             objectActive = Instantiate(bulletPrefab, Vector3.zero, Quaternion.identity);
             listBullets.Add(objectActive);
+            objectActive.SetActive(false);
+        }
+    }
+    public void InitialCereals()
+    {
+        for (int i = 0; i < initialCereals; i++)
+        {
+            objectActive = Instantiate(cerealPrefab, Vector3.zero, Quaternion.identity);
+            listCereals.Add(objectActive);
             objectActive.SetActive(false);
         }
     }
@@ -79,14 +96,14 @@ public class ObjectPooling : MonoBehaviour
     public void BulletPool(BulletCreator bulleto)
     {
         found = false;
-        for (int i = 0; i < listBombs.Count; i++)
+        for (int i = 0; i < listBullets.Count; i++)
         {
-            if (!listBombs[i].activeInHierarchy)
+            if (!listBullets[i].activeInHierarchy)
             {
-                listBombs[i].transform.SetPositionAndRotation(new Vector3(bulleto.gameObject.transform.position.x,
+                listBullets[i].transform.SetPositionAndRotation(new Vector3(bulleto.gameObject.transform.position.x,
                                                                         bulleto.gameObject.transform.position.y - 0.5f,
                                                                         bulleto.gameObject.transform.position.z), Quaternion.identity);
-                objectActive = listBombs[i];
+                objectActive = listBullets[i];
                 objectActive.SetActive(true);
                 found = true;
                 break;
@@ -97,4 +114,48 @@ public class ObjectPooling : MonoBehaviour
             bulleto.createBullet();
         }
     }
+    public void CerealPool(CerealCreator cerealo, int qty)
+    {
+        int foundCereals = 0;
+        found = false;
+        for (int i = 0; i < listCereals.Count; i++)
+        {
+            if (!listCereals[i].activeInHierarchy)
+            {
+                listCereals[i].transform.SetPositionAndRotation(cerealo.RandomPosition(), Quaternion.identity);
+                objectActive = listCereals[i];
+                objectActive.SetActive(true);
+                found = true;
+                foundCereals++;
+                if (foundCereals == qty)
+                    break;
+            }
+        }
+        if (!found)
+        {
+            cerealo.createCereal();
+        }
+    }
+
+    public void CerealPool(CerealCreator cerealo)
+    {
+        found = false;
+        for (int i = 0; i < listCereals.Count; i++)
+        {
+            if (!listCereals[i].activeInHierarchy)
+            {
+                listCereals[i].transform.SetPositionAndRotation(cerealo.RandomPosition(), Quaternion.identity);
+                objectActive = listCereals[i];
+                objectActive.SetActive(true);
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            cerealo.createCereal();
+        }
+    }
+
+
 }

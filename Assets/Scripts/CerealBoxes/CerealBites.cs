@@ -4,11 +4,28 @@ using UnityEngine;
 
 public class CerealBites : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
+    public bool pickable;
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            if (pickable)
+            {
+                Debug.Log("comi cereal");
+                pickable = false;
+                this.gameObject.SetActive(false);
+            }
         }
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(WaitPickup());
+    }
+    IEnumerator WaitPickup()
+    {
+        yield return new WaitForSeconds(1f);
+        pickable = true;
     }
 }

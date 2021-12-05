@@ -5,10 +5,19 @@ using UnityEngine;
 public class Breakable : MonoBehaviour
 {
     Vector3 vectorPoint;
+    public int cerealQty;
+
     private float angleCollision;
-    [HideInInspector]public int cerealCounter;
-    private Animator animcharacter;
-    public AnimationState jumpState;
+    [HideInInspector]
+    public Animator animcharacter;
+    [HideInInspector]
+    public CerealCreator cerealo;
+
+    private void Start()
+    {
+        cerealo = this.gameObject.GetComponent<CerealCreator>();
+        cerealQty = RandoCerealQty();
+    }
 
 
     private void OnCollisionEnter(Collision other)
@@ -16,18 +25,18 @@ public class Breakable : MonoBehaviour
         vectorPoint = other.contacts[0].point;
         angleCollision= Vector3.Angle(vectorPoint - this.transform.position, other.transform.up);
         animcharacter = other.gameObject.GetComponentInChildren<Animator>();
-        Debug.Log(angleCollision);
+        //Debug.Log(angleCollision);
 
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             //jump above
             if (angleCollision < 60 && !PlayerMovement.isGrounded)
             {
-                animcharacter.SetTrigger("jump");
                 AboveInteraction(other);
             }
             if (PlayerMovement.spinning || PlayerMovement.sliding)
             {
+                CreateCereal();
                 DestroyObject(other);
             }
             if (angleCollision > 125 && !PlayerMovement.isGrounded)
@@ -40,12 +49,14 @@ public class Breakable : MonoBehaviour
     {
         if (PlayerMovement.spinning || PlayerMovement.sliding)
         {
+            CreateCereal();
             Destroy(this.gameObject);
         }
     }
 
     public virtual void AboveInteraction(Collision other)
     {
+        CreateCereal();
         DestroyObject(other);
     }
 
@@ -57,7 +68,19 @@ public class Breakable : MonoBehaviour
     public virtual void DestroyObject(Collision other)
     {
         Destroy(this.gameObject);
+
     }
 
+    public virtual int RandoCerealQty()
+    {
+        return Random.Range(3, 5);
+    }
+
+    public virtual void CreateCereal()
+    {
+        Debug.Log(cerealQty);
+        if (cerealo)
+            cerealo.CerealBoxDestroyed(cerealQty);
+    }
 
 }

@@ -4,39 +4,97 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour
 {
-    public ObjectCreator objectCreator;
-    public List<GameObject> listBalls;
-    private float rando;
+    //BOMB VARIABLES
+    [HideInInspector]
+    public List<GameObject> listBombs;
+    public int initialBombs;
+    public GameObject bombPrefab;
+
+    //BULLET VARIABLES
+    [HideInInspector]
+    public List<GameObject> listBullets;
+    [Space]
+    public int initialBullets;
+    public GameObject bulletPrefab;
+
+    //POOLING VARIABLES
     private GameObject objectActive;
     private bool found;
 
-    // Start is called before the first frame update
-    void Awake()
+    #region Singleton
+    public static ObjectPooling instance;
+    private void Awake()
     {
-        listBalls = objectCreator.totalObjects;
+        instance = this;
+        listBombs = new List<GameObject>();
+        listBullets = new List<GameObject>();
+    }
+    #endregion
+    private void Start()
+    {
+        InitialBombs();
+        InitialBullets();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InitialBombs()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        for (int i = 0; i < initialBombs; i++)
         {
-            found = false;
-            for (int i = 0; i < listBalls.Count; i++)
+            objectActive = Instantiate(bombPrefab, Vector3.zero, Quaternion.identity);
+            listBombs.Add(objectActive);
+            objectActive.SetActive(false);
+        }
+    }
+    public void InitialBullets()
+    {
+        for (int i = 0; i < initialBullets; i++)
+        {
+            objectActive = Instantiate(bulletPrefab, Vector3.zero, Quaternion.identity);
+            listBullets.Add(objectActive);
+            objectActive.SetActive(false);
+        }
+    }
+
+    public void FindBombPool(BombCreator bombo)
+    {
+        found = false;
+        for (int i = 0; i < listBombs.Count; i++)
+        {
+            if (!listBombs[i].activeInHierarchy)
             {
-                if (!listBalls[i].activeInHierarchy)
-                {
-                    listBalls[i].transform.SetPositionAndRotation(objectCreator.findRandomPos(), Quaternion.identity);
-                    objectActive = listBalls[i];
-                    objectActive.SetActive(true);
-                    found = true;
-                    break;
-                }
+                listBombs[i].transform.SetPositionAndRotation(new Vector3(bombo.gameObject.transform.position.x,
+                                                                        bombo.gameObject.transform.position.y - 0.5f,
+                                                                        bombo.gameObject.transform.position.z), Quaternion.identity);
+                objectActive = listBombs[i];
+                objectActive.SetActive(true);
+                found = true;
+                break;
             }
-            if (!found)
+        }
+        if (!found)
+        {
+            bombo.createBomb();
+        }
+    }
+    public void BulletPool(BulletCreator bulleto)
+    {
+        found = false;
+        for (int i = 0; i < listBombs.Count; i++)
+        {
+            if (!listBombs[i].activeInHierarchy)
             {
-                objectCreator.createBall();
+                listBombs[i].transform.SetPositionAndRotation(new Vector3(bulleto.gameObject.transform.position.x,
+                                                                        bulleto.gameObject.transform.position.y - 0.5f,
+                                                                        bulleto.gameObject.transform.position.z), Quaternion.identity);
+                objectActive = listBombs[i];
+                objectActive.SetActive(true);
+                found = true;
+                break;
             }
+        }
+        if (!found)
+        {
+            bulleto.createBullet();
         }
     }
 }

@@ -4,32 +4,45 @@ using UnityEngine;
 
 public class BombCreator : MonoBehaviour
 {
-    public List<GameObject> totalBombs;
-    public int bombQty;
-    private float rando;
-    public GameObject bombPrefab, bombNew;
-    private Vector3 spawnPosition;
+    public int bombInitialQty;
+    public GameObject bombPrefab;
+    public float timerMaxCount;
 
-    private void Awake()
+    [HideInInspector]
+    public GameObject bombNew;
+    private Vector3 spawnPosition;
+    private ObjectPooling objectPooler;
+    private float timer;
+
+    private void Start()
     {
-        totalBombs = new List<GameObject>();
-        spawnPosition = Vector3.zero;
-        for (int i = 0; i < bombQty; i++)
-        {
-            bombNew = Instantiate(bombPrefab, findRandomPos(), Quaternion.identity, this.transform);
-            totalBombs.Add(bombNew);
-            bombNew.SetActive(false);
+        RequestPool();
+    }
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if(timer >= timerMaxCount)
+        { 
+            objectPooler.FindBombPool(this);
+            timer = 0;
         }
     }
 
     public void createBomb()
     {
-        totalBombs.Add(Instantiate(bombPrefab, findRandomPos(), Quaternion.identity, this.transform));
+        objectPooler.listBombs.Add(Instantiate(bombPrefab, ObjectPosition(), Quaternion.identity));
     }
-    public Vector3 findRandomPos()
+
+    public void RequestPool()
     {
-        rando = Random.Range(-3f, 3f);
-        return new Vector3(rando, this.transform.position.y, this.transform.position.z);
+        objectPooler = FindObjectOfType<ObjectPooling>();
+    }
+
+    Vector3 ObjectPosition()
+    {
+        spawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        return spawnPosition;
     }
 
 }

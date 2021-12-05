@@ -97,6 +97,6 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics.CheckCapsule(playerCollider.bounds.center, 
             new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y, playerCollider.bounds.center.z),
             playerCollider.radius * .9f, ground);
-        return isGrounded;
+        return isGrounded;  
     }
 }

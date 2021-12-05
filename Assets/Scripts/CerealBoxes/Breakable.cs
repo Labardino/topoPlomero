@@ -7,7 +7,8 @@ public class Breakable : MonoBehaviour
     Vector3 vectorPoint;
     private float angleCollision;
     [HideInInspector]public int cerealCounter;
-    [SerializeField] private Animator animcharacter;
+    private Animator animcharacter;
+    public AnimationState jumpState;
 
 
     private void OnCollisionEnter(Collision other)

@@ -278,6 +278,71 @@ Transform:
   m_Father: {fileID: 1294332461590785175}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &168749375547080456
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467564699784876767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 223.64, y: 37.24633, z: 137.0768}
+  m_Center: {x: -0.000010491873, y: 39.719505, z: -54.496754}
+--- !u!65 &4206662447530175293
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467564699784876767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 211.5138, y: 20.284494, z: 19.850525}
+  m_Center: {x: -0.53121215, y: -48.200462, z: 7.6672597}
+--- !u!65 &5709914976984767162
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467564699784876767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 132.0098, y: 54.81565, z: 56.93692}
+  m_Center: {x: -0.56585944, y: -5.918187, z: 36.520035}
+--- !u!65 &6311396704602391691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467564699784876767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 164.07983, y: 20.889208, z: 69.22225}
+  m_Center: {x: 2.654205, y: 38.496925, z: 48.074524}
+--- !u!65 &6902760648665182059
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467564699784876767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 76.28046, y: 22.4775, z: 41.20867}
+  m_Center: {x: -0.9540725, y: 32.33549, z: 103.46597}
 --- !u!1 &2564249892740116757
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,6 +819,7 @@ GameObject:
   - component: {fileID: 1918698344071431365}
   - component: {fileID: 5119301410421179403}
   - component: {fileID: 5119301410421179396}
+  - component: {fileID: 4744627435320404712}
   m_Layer: 0
   m_Name: LoboPlaneador
   m_TagString: Untagged
@@ -907,6 +973,20 @@ MonoBehaviour:
   playerSound: {fileID: 5119301410421179403}
   clipSounds:
   - {fileID: 8300000, guid: 9dd576a6654fdc24c8b346076c7ca599, type: 3}
+--- !u!136 &4744627435320404712
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5119301410421179397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.43
+  m_Height: 1.86
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.61, z: 0.19}
 --- !u!1 &5320196090922531602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,5 +1952,10 @@ PrefabInstance:
 --- !u!4 &2987396911822588005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dafceeb995d56cd4fb4e4c1af3e235cb, type: 3}
+  m_PrefabInstance: {fileID: 3386677046858329998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2467564699784876767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dafceeb995d56cd4fb4e4c1af3e235cb, type: 3}
   m_PrefabInstance: {fileID: 3386677046858329998}
   m_PrefabAsset: {fileID: 0}

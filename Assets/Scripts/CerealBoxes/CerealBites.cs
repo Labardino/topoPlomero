@@ -6,15 +6,23 @@ public class CerealBites : MonoBehaviour
 {
     private bool pickable;
     private float rotationsPerMinute = 20;
+    public PlayerManager playerInfo;
+    public HUD hudInfo;
+    private void Start()
+    {
+        playerInfo = FindObjectOfType<PlayerManager>();
+        hudInfo = FindObjectOfType<HUD>();
 
+    }
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             if (pickable)
             {
-                Debug.Log("comi cereal");
                 pickable = false;
+                playerInfo.AddOneCereal();
+                hudInfo.UpdatePlayerCereals();
                 this.gameObject.SetActive(false);
             }
         }
@@ -31,7 +39,7 @@ public class CerealBites : MonoBehaviour
     }
     IEnumerator WaitPickup()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         pickable = true;
     }
 }

@@ -25,7 +25,7 @@ public class BulletCreator : MonoBehaviour
 
     public void createBullet()
     {
-        objectPooler.listBullets.Add(Instantiate(bulletPrefab, ObjectPosition(), Quaternion.identity));
+        objectPooler.listBullets.Add(Instantiate(bulletPrefab, bulletSpawn.BazookaPos(), this.transform.rotation));
     }
 
     public void RequestPool()

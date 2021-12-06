@@ -136,15 +136,14 @@ public class ObjectPooling : MonoBehaviour
             wolfo.createBomb();
         }
     }
-    public void BulletPool(BulletCreator bulleto)
+    public void BulletPool(BulletCreator bulleto, BulletPos bulletPos)
     {
         found = false;
         for (int i = 0; i < listBullets.Count; i++)
         {
             if (!listBullets[i].activeInHierarchy)
             {
-                listBullets[i].transform.SetPositionAndRotation(bulletPos.BazookaPos(), Quaternion.identity);
-                Debug.Log(bulletPos.BazookaPos() + "Heeeeyyy");
+                listBullets[i].transform.SetPositionAndRotation(bulletPos.BazookaPos(), bulleto.gameObject.transform.rotation);
                 objectActive = listBullets[i];
                 objectActive.SetActive(true);
                 found = true;

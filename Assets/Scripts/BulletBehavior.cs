@@ -10,4 +10,8 @@ public class BulletBehavior : MonoBehaviour
     {
         gameObject.transform.Translate(Vector3.forward * Time.deltaTime * bulletSpeed);
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        this.gameObject.SetActive(false);
+    }
 }

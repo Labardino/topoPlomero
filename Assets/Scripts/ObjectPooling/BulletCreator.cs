@@ -7,18 +7,20 @@ public class BulletCreator : MonoBehaviour
     public ObjectPooling objectPooler;
     public GameObject bulletPrefab;
     private Vector3 spawnPosition;
+    public BulletPos bulletSpawn;
 
     private void Start()
     {
         RequestPool();
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            objectPooler.BulletPool(this);
-        }
+        bulletSpawn = GetComponentInChildren<BulletPos>();
+    }
+    public void PoolBullet()
+    {
+        objectPooler.BulletPool(this, bulletSpawn);
     }
 
     public void createBullet()
@@ -36,4 +38,5 @@ public class BulletCreator : MonoBehaviour
         spawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         return spawnPosition;
     }
+   
 }

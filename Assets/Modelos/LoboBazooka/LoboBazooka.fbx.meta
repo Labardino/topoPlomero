@@ -59,10 +59,17 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.18553458
+      - time: 0.20408164
         functionName: fireSound
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 6a372615e1a258448a1641a233b11c6b, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.23218182
+        functionName: PoolBullet
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 1bbd882da7d6f4f4693497ad9687758f, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

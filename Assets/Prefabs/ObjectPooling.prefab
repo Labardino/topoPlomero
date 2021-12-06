@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &467121743062120262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 467121743062120260}
+  - component: {fileID: 467121743062120261}
+  m_Layer: 0
+  m_Name: ObjectPooling
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &467121743062120260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467121743062120262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 41.849846, y: -0.93117714, z: 5.2949686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &467121743062120261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467121743062120262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5e25d5343e54c4ba1a5743847657a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listBombs: []
+  initialBombs: 10
+  bombPrefab: {fileID: 573108136161213018, guid: dca23068df1cfff4797afeb70350faf4, type: 3}
+  listBullets: []
+  initialBullets: 10
+  bulletPrefab: {fileID: 2974440286330803567, guid: 3d14c9f577d02e8458bb71fcaca3e13b, type: 3}
+  listCereals: []
+  initialCereals: 10
+  cerealPrefab: {fileID: 7737230298598686618, guid: bf3cbb6447aa6e94ab1f6ecc01c3406b, type: 3}
+  listWolves: []
+  initialWolves: 3
+  wolfPrefab: {fileID: 5952340698973276538, guid: b6935b78f011d00428acb3e75e3cfbca, type: 3}

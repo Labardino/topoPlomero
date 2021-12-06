@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2240364121384823661}
   - component: {fileID: 2934241225322210504}
   - component: {fileID: 1106886674139566082}
+  - component: {fileID: -2861741092653942224}
   - component: {fileID: -1641114101482779701}
   - component: {fileID: -5860206828185878851}
   m_Layer: 0
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467205775081107927}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2934241225322210504
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-2861741092653942224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467205775081107927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4633981, y: 0.956604, z: 0.6516573}
+  m_Center: {x: 0, y: 0.478302, z: 0}
 --- !u!114 &-1641114101482779701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,4 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPooler: {fileID: 0}
-  cerealPrefab: {fileID: 1467205775081107927}
+  cerealPrefab: {fileID: 7737230298598686618, guid: bf3cbb6447aa6e94ab1f6ecc01c3406b, type: 3}

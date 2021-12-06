@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BombCreator : MonoBehaviour
 {
-    public int bombInitialQty;
     public GameObject bombPrefab;
     public float timerMaxCount;
 

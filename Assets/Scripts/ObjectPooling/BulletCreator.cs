@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BulletCreator : MonoBehaviour
 {
-    public ObjectPooling objectPooler;
+    private ObjectPooling objectPooler;
     public GameObject bulletPrefab;
     private Vector3 spawnPosition;
-    public BulletPos bulletSpawn;
+    private BulletPos bulletSpawn;
 
     private void Start()
     {

@@ -9,7 +9,7 @@ public class ObjectPooling : MonoBehaviour
     public List<GameObject> listBombs;
     public int initialBombs;
     public GameObject bombPrefab;
-    public Rigidbody rigiBomb;
+    private Rigidbody rigiBomb;
 
     //BULLET VARIABLES
     [HideInInspector]
@@ -29,6 +29,7 @@ public class ObjectPooling : MonoBehaviour
     //WOLF VARIABLES
     [HideInInspector]
     public List<GameObject> listWolves;
+    [Space]
     public int initialWolves;
     public GameObject wolfPrefab;
 
@@ -124,7 +125,7 @@ public class ObjectPooling : MonoBehaviour
             {
                 listWolves[i].transform.SetPositionAndRotation(new Vector3(wolfo.gameObject.transform.position.x,
                                                                         wolfo.gameObject.transform.position.y,
-                                                                        wolfo.gameObject.transform.position.z), Quaternion.Euler(0,0,0));
+                                                                        wolfo.gameObject.transform.position.z), wolfo.transform.rotation);
                 objectActive = listWolves[i];
                 objectActive.SetActive(true);
                 found = true;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Breakable : MonoBehaviour
 {
     Vector3 vectorPoint;
+    [HideInInspector]
     public int cerealQty;
 
     private float angleCollision;
@@ -27,6 +28,7 @@ public class Breakable : MonoBehaviour
         animcharacter = other.gameObject.GetComponentInChildren<Animator>();
         //Debug.Log(angleCollision);
 
+
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             //jump above
@@ -39,7 +41,7 @@ public class Breakable : MonoBehaviour
                 CreateCereal();
                 DestroyObject(other);
             }
-            if (angleCollision > 125 && !PlayerMovement.isGrounded)
+            if (angleCollision > 60 && !PlayerMovement.isGrounded)
             {
                 BelowInteraction(other);
             }

@@ -21,6 +21,10 @@ public class HUD : MonoBehaviour
     private void Start()
     {
         playerInfo = FindObjectOfType<PlayerManager>();
+        textLives.gameObject.SetActive(false);
+        imageLives.gameObject.SetActive(false);
+        textCereal.gameObject.SetActive(false);
+        imageCereal.gameObject.SetActive(false);
         UpdatePlayerLives();
         UpdatePlayerCereals();
     }

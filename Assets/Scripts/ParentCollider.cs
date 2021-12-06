@@ -54,7 +54,7 @@ public class ParentCollider : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Glider"))
         {
-            other.gameObject.transform.parent.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
         }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))

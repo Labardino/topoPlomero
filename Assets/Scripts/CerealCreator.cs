@@ -25,7 +25,7 @@ public class CerealCreator : MonoBehaviour
 
     public void createCereal()
     {
-        objectPooler.listBullets.Add(Instantiate(cerealPrefab, ObjectPosition(), Quaternion.identity));
+        objectPooler.listBullets.Add(Instantiate(cerealPrefab, ObjectPosition(), Quaternion.Euler(-90, 0, 0)));
     }
 
     public void RequestPool()

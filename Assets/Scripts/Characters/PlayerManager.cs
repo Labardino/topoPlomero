@@ -9,9 +9,31 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        livesPlayer = 3;
+        playerCereals = 0;
     }
     #endregion
 
     public GameObject player;
-    public int livesPlayer;
+    public int livesPlayer, playerCereals;
+
+    public void RemoveOneLife()
+    {
+        livesPlayer--;
+    }
+
+    private void Update()
+    {
+        ExchangeMoneyForLife();
+    }
+
+    public void ExchangeMoneyForLife()
+    {
+        if (playerCereals >= 100)
+        {
+            playerCereals = 0;
+            livesPlayer++;
+        }
+
+    }
 }

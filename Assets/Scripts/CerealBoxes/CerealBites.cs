@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CerealBites : MonoBehaviour
 {
-    public bool pickable;
+    private bool pickable;
+    private float rotationsPerMinute = 20;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -17,6 +18,11 @@ public class CerealBites : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         }
+    }
+
+    private void Update()
+    {
+        transform.Rotate(0, 0, (float)(6.0 * rotationsPerMinute * Time.deltaTime));
     }
 
     private void OnEnable()

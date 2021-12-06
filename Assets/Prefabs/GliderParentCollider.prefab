@@ -104,5 +104,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wolfInitialQty: 3
-  wolfPrefab: {fileID: 0}
+  wolfPrefab: {fileID: 5952340698973276538, guid: b6935b78f011d00428acb3e75e3cfbca, type: 3}
   wolfNew: {fileID: 0}

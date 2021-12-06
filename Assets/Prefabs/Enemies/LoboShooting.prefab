@@ -936,17 +936,17 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7001557297175376122, guid: 3317d7015ad93954686e05387f6690bd, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.505
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  DopplerLevel: 0
+  MinDistance: 3
+  MaxDistance: 4
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -981,7 +981,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -996,7 +996,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.008333334
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1011,7 +1011,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.026
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1088,9 +1088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbd882da7d6f4f4693497ad9687758f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPooler: {fileID: 0}
   bulletPrefab: {fileID: 2974440286330803567, guid: 3d14c9f577d02e8458bb71fcaca3e13b, type: 3}
-  bulletSpawn: {fileID: 0}
 --- !u!1 &5530471158360255883
 GameObject:
   m_ObjectHideFlags: 0

@@ -401,7 +401,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186543327}
-  m_LocalRotation: {x: 0.088644244, y: -0.061442852, z: 0.0054785972, w: 0.9941514}
+  m_LocalRotation: {x: 0.08864422, y: -0.06144288, z: 0.005478599, w: 0.9941514}
   m_LocalPosition: {x: 0.6387682, y: 1.7514913, z: -8.497926}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1800,6 +1800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoboPlaneador
       objectReference: {fileID: 0}
+    - target: {fileID: 5119301410421179397, guid: 04a113ef6874d4d4184d6c4b3dbee9bd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5494595156520722111, guid: 04a113ef6874d4d4184d6c4b3dbee9bd, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2611,7 +2615,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557335223}
-  m_LocalRotation: {x: 0.088644244, y: -0.061442852, z: 0.0054785972, w: 0.9941514}
+  m_LocalRotation: {x: 0.08864422, y: -0.06144288, z: 0.005478599, w: 0.9941514}
   m_LocalPosition: {x: 0.6387682, y: 1.7514913, z: -8.497926}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

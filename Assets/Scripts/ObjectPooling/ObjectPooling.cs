@@ -97,16 +97,15 @@ public class ObjectPooling : MonoBehaviour
             bombo.createBomb();
         }
     }
-    public void BulletPool(BulletCreator bulleto)
+    public void BulletPool(BulletCreator bulleto, BulletPos bulletPos)
     {
         found = false;
         for (int i = 0; i < listBullets.Count; i++)
         {
             if (!listBullets[i].activeInHierarchy)
             {
-                listBullets[i].transform.SetPositionAndRotation(new Vector3(bulleto.gameObject.transform.position.x,
-                                                                        bulleto.gameObject.transform.position.y - 0.5f,
-                                                                        bulleto.gameObject.transform.position.z), Quaternion.identity);
+                listBullets[i].transform.SetPositionAndRotation(bulletPos.BazookaPos(), Quaternion.identity);
+                Debug.Log(bulletPos.BazookaPos() + "Heeeeyyy");
                 objectActive = listBullets[i];
                 objectActive.SetActive(true);
                 found = true;

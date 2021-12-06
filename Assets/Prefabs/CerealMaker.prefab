@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 2240364121384823661}
   - component: {fileID: 2934241225322210504}
   - component: {fileID: 1106886674139566082}
+  - component: {fileID: -1641114101482779701}
+  - component: {fileID: -5860206828185878851}
   m_Layer: 0
-  m_Name: cama_mascereal
+  m_Name: CerealMaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,3 +83,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-1641114101482779701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467205775081107927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bede54d2789ad34b9d44104f22bf444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cerealQty: 0
+  animcharacter: {fileID: 0}
+  cerealo: {fileID: 0}
+  cerealCounter: 0
+--- !u!114 &-5860206828185878851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467205775081107927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5346814a75f493246aeed961ade12368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPooler: {fileID: 0}
+  cerealPrefab: {fileID: 1467205775081107927}

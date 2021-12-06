@@ -25,6 +25,14 @@ public class ObjectPooling : MonoBehaviour
     public int initialCereals;
     public GameObject cerealPrefab;
 
+
+    //WOLF VARIABLES
+    [HideInInspector]
+    public List<GameObject> listWolves;
+    public int initialWolves;
+    public GameObject wolfPrefab;
+
+
     //POOLING VARIABLES
     private GameObject objectActive;
     private bool found;
@@ -43,6 +51,7 @@ public class ObjectPooling : MonoBehaviour
         InitialBombs();
         InitialBullets();
         InitialCereals();
+        InitialWolves();
     }
 
     public void InitialBombs()
@@ -72,6 +81,15 @@ public class ObjectPooling : MonoBehaviour
             objectActive.SetActive(false);
         }
     }
+    public void InitialWolves()
+    {
+        for (int i = 0; i < initialWolves; i++)
+        {
+            objectActive = Instantiate(wolfPrefab, Vector3.zero, Quaternion.identity);
+            listWolves.Add(objectActive);
+            objectActive.SetActive(false);
+        }
+    }
 
     public void FindBombPool(BombCreator bombo)
     {
@@ -95,6 +113,27 @@ public class ObjectPooling : MonoBehaviour
         if (!found)
         {
             bombo.createBomb();
+        }
+    }
+    public void FindWolfPool(GliderWolfCreator wolfo)
+    {
+        found = false;
+        for (int i = 0; i < listWolves.Count; i++)
+        {
+            if (!listWolves[i].activeInHierarchy)
+            {
+                listWolves[i].transform.SetPositionAndRotation(new Vector3(wolfo.gameObject.transform.position.x,
+                                                                        wolfo.gameObject.transform.position.y,
+                                                                        wolfo.gameObject.transform.position.z), Quaternion.Euler(0,0,0));
+                objectActive = listWolves[i];
+                objectActive.SetActive(true);
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            wolfo.createBomb();
         }
     }
     public void BulletPool(BulletCreator bulleto)

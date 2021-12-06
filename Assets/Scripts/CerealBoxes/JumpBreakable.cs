@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class JumpBreakable : Breakable
 {
-
     public override void AboveInteraction(Collision other)
     {
         animcharacter.SetTrigger("jump");

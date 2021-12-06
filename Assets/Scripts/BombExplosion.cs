@@ -8,9 +8,16 @@ public class BombExplosion : MonoBehaviour
     public float explosionForce;
     Vector3 vectorDistance;
     private float centerModifierX, centerModifierZ;
+    public PlayerManager playerInfo;
+    public HUD hudInfo;
 
     public const float modifierValue=1.0f;
 
+    private void OnEnable()
+    {
+        playerInfo = FindObjectOfType<PlayerManager>();
+        hudInfo = FindObjectOfType<HUD>();
+    }
     private void Update()
     {
         transform.Rotate(Vector3.forward * Time.deltaTime * 300f);
@@ -37,10 +44,11 @@ public class BombExplosion : MonoBehaviour
             foreach(Collider nearby in collisionList)
             {
                 Rigidbody rb = nearby.GetComponentInParent<Rigidbody>();
-                if (rb)
+                if (nearby.gameObject.layer == LayerMask.NameToLayer("Player") && rb)
                 {
-
                     rb.AddExplosionForce(explosionForce, transform.position, spherecastRadio,3.0f);
+                    playerInfo.RemoveOneLife();
+                    hudInfo.UpdatePlayerLives();
                     //rb.AddExplosionForce(explosionForce, rb.transform.position, spherecastRadio);
                 }
             }
@@ -57,7 +65,7 @@ public class BombExplosion : MonoBehaviour
             foreach (Collider nearby in collisionList)
             {
                 Rigidbody rb = nearby.GetComponentInParent<Rigidbody>();
-                if (rb)
+                if (nearby.gameObject.layer == LayerMask.NameToLayer("Player") && rb)
                 {
                     vectorDistance = this.transform.position - rb.gameObject.transform.position;
                     if(vectorDistance.z>0)
@@ -78,6 +86,8 @@ public class BombExplosion : MonoBehaviour
                     }
 
                     rb.AddExplosionForce(explosionForce, new Vector3(transform.position.x + centerModifierX, transform.position.y, transform.position.z + centerModifierZ), spherecastRadio,3.0f);
+                    playerInfo.RemoveOneLife();
+                    hudInfo.UpdatePlayerLives();
                     //rb.AddExplosionForce()
                     //rb.AddExplosionForce(explosionForce, rb.transform.position, spherecastRadio);
                 }

@@ -9,6 +9,7 @@ public class ObjectPooling : MonoBehaviour
     public List<GameObject> listBombs;
     public int initialBombs;
     public GameObject bombPrefab;
+    public Rigidbody rigiBomb;
 
     //BULLET VARIABLES
     [HideInInspector]
@@ -66,7 +67,7 @@ public class ObjectPooling : MonoBehaviour
     {
         for (int i = 0; i < initialCereals; i++)
         {
-            objectActive = Instantiate(cerealPrefab, Vector3.zero, Quaternion.identity);
+            objectActive = Instantiate(cerealPrefab, Vector3.zero, Quaternion.Euler(-90,0,0));
             listCereals.Add(objectActive);
             objectActive.SetActive(false);
         }
@@ -83,6 +84,9 @@ public class ObjectPooling : MonoBehaviour
                                                                         bombo.gameObject.transform.position.y - 0.5f,
                                                                         bombo.gameObject.transform.position.z), Quaternion.identity);
                 objectActive = listBombs[i];
+                rigiBomb = objectActive.GetComponent<Rigidbody>();
+                rigiBomb.velocity = Vector3.zero;
+                rigiBomb.angularVelocity = Vector3.zero;
                 objectActive.SetActive(true);
                 found = true;
                 break;
@@ -122,7 +126,7 @@ public class ObjectPooling : MonoBehaviour
         {
             if (!listCereals[i].activeInHierarchy)
             {
-                listCereals[i].transform.SetPositionAndRotation(cerealo.RandomPosition(), Quaternion.identity);
+                listCereals[i].transform.SetPositionAndRotation(cerealo.RandomPosition(), Quaternion.Euler(-90, 0, 0));
                 objectActive = listCereals[i];
                 objectActive.SetActive(true);
                 found = true;
@@ -144,7 +148,7 @@ public class ObjectPooling : MonoBehaviour
         {
             if (!listCereals[i].activeInHierarchy)
             {
-                listCereals[i].transform.SetPositionAndRotation(cerealo.RandomPosition(), Quaternion.identity);
+                listCereals[i].transform.SetPositionAndRotation(cerealo.RandomPosition(), Quaternion.Euler(-90, 0, 0));
                 objectActive = listCereals[i];
                 objectActive.SetActive(true);
                 found = true;

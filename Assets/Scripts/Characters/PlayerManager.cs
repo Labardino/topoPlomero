@@ -11,29 +11,34 @@ public class PlayerManager : MonoBehaviour
         instance = this;
         livesPlayer = 3;
         playerCereals = 0;
+        maxCereals = 69;
     }
     #endregion
 
     public GameObject player;
-    public int livesPlayer, playerCereals;
+    public int livesPlayer, playerCereals, maxCereals;
 
     public void RemoveOneLife()
     {
         livesPlayer--;
     }
-
+    public void AddOneCereal()
+    {
+        playerCereals++;
+    }
     private void Update()
     {
-        ExchangeMoneyForLife();
+        ExchangeCerealForLife();
     }
 
-    public void ExchangeMoneyForLife()
+    public bool ExchangeCerealForLife()
     {
-        if (playerCereals >= 100)
+        if (playerCereals >= maxCereals)
         {
             playerCereals = 0;
             livesPlayer++;
+            return true;
         }
-
+        return false;
     }
 }

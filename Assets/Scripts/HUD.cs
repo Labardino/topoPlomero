@@ -7,7 +7,6 @@ using TMPro;
 public class HUD : MonoBehaviour
 {
     public Image imageLives, imageCereal;
-    public Sprite spriteLives, spriteCereal;
     public TextMeshProUGUI textLives, textCereal;
     private PlayerManager playerInfo;
 
@@ -23,10 +22,7 @@ public class HUD : MonoBehaviour
     {
         playerInfo = FindObjectOfType<PlayerManager>();
         UpdatePlayerLives();
-    }
-    private void Update()
-    {
-
+        UpdatePlayerCereals();
     }
     public void UpdatePlayerLives()
     {
@@ -34,6 +30,18 @@ public class HUD : MonoBehaviour
         imageLives.gameObject.SetActive(true);
         textLives.text = "X " + playerInfo.livesPlayer;
         StartCoroutine(ShowHideInfo(textLives, imageLives));
+    }
+
+    public void UpdatePlayerCereals()
+    {
+        textCereal.gameObject.SetActive(true);
+        imageCereal.gameObject.SetActive(true);
+        if (playerInfo.ExchangeCerealForLife())
+        {
+            UpdatePlayerLives();
+        }
+        textCereal.text = "X " + playerInfo.playerCereals;
+        StartCoroutine(ShowHideInfo(textCereal, imageCereal));
     }
 
     IEnumerator ShowHideInfo(TextMeshProUGUI textInfo, Image imageInfo)

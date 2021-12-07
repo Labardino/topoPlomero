@@ -44,17 +44,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listBombs: []
-  initialBombs: 10
+  initialBombs: 15
   bombPrefab: {fileID: 573108136161213018, guid: dca23068df1cfff4797afeb70350faf4, type: 3}
+  bombActive: {fileID: 0}
   listBullets: []
-  initialBullets: 10
+  initialBullets: 25
   bulletPrefab: {fileID: 2974440286330803567, guid: 3d14c9f577d02e8458bb71fcaca3e13b, type: 3}
+  bulletActive: {fileID: 0}
   listCereals: []
-  initialCereals: 10
+  initialCereals: 15
   cerealPrefab: {fileID: 7737230298598686618, guid: bf3cbb6447aa6e94ab1f6ecc01c3406b, type: 3}
+  cerealActive: {fileID: 0}
+  cerealoActive: {fileID: 0}
   listGliderWolves: []
-  initialGliderWolves: 10
+  initialGliderWolves: 6
   wolfGliderPrefab: {fileID: 5952340698973276538, guid: b6935b78f011d00428acb3e75e3cfbca, type: 3}
+  gliderActive: {fileID: 0}
   listShooterWolves: []
-  initialShooterWolves: 10
+  initialShooterWolves: 6
   wolfShooterPrefab: {fileID: 4764357184111727260, guid: 6f512a43043098144a8463f217417ca3, type: 3}
+  shooterActive: {fileID: 0}
+  listExplosions: []
+  initialExplosions: 15
+  explosionPrefab: {fileID: 100002, guid: 6890a03af913b874092fbb1e8337747d, type: 3}
+  explosionActive: {fileID: 0}

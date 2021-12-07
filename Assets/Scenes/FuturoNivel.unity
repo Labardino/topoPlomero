@@ -12242,6 +12242,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 467121743062120261, guid: f563c23db8b5bd041ac94f2bdaafd6da, type: 3}
+      propertyPath: initialBombs
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 467121743062120261, guid: f563c23db8b5bd041ac94f2bdaafd6da, type: 3}
+      propertyPath: initialBullets
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 467121743062120261, guid: f563c23db8b5bd041ac94f2bdaafd6da, type: 3}
+      propertyPath: initialCereals
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 467121743062120261, guid: f563c23db8b5bd041ac94f2bdaafd6da, type: 3}
+      propertyPath: initialGliderWolves
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 467121743062120261, guid: f563c23db8b5bd041ac94f2bdaafd6da, type: 3}
+      propertyPath: initialShooterWolves
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 467121743062120262, guid: f563c23db8b5bd041ac94f2bdaafd6da, type: 3}
       propertyPath: m_Name
       value: ObjectPooling

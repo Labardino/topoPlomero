@@ -11,20 +11,23 @@ public class WolfDeath : MonoBehaviour
         {
             if (PlayerMovement.spinning || PlayerMovement.sliding)
             {
-                DestroyObject(other);
+                DeactivateWolf();
             }
         }
     }
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionStay(Collision other)
     {
-        if (PlayerMovement.spinning || PlayerMovement.sliding)
+        if (other.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Destroy(this.gameObject);
+            if (PlayerMovement.spinning || PlayerMovement.sliding)
+            {
+                DeactivateWolf();
+            }
         }
     }
 
-    public virtual void DestroyObject(Collision other)
+    public virtual void DeactivateWolf()
     {
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
 }

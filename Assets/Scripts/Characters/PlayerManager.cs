@@ -22,6 +22,11 @@ public class PlayerManager : MonoBehaviour
     {
         livesPlayer--;
     }
+
+    public void RemoveAllLives()
+    {
+        livesPlayer = 0;
+    }
     public void AddOneCereal()
     {
         playerCereals++;

@@ -52,6 +52,9 @@ MonoBehaviour:
   listCereals: []
   initialCereals: 10
   cerealPrefab: {fileID: 7737230298598686618, guid: bf3cbb6447aa6e94ab1f6ecc01c3406b, type: 3}
-  listWolves: []
-  initialWolves: 3
-  wolfPrefab: {fileID: 5952340698973276538, guid: b6935b78f011d00428acb3e75e3cfbca, type: 3}
+  listGliderWolves: []
+  initialGliderWolves: 10
+  wolfGliderPrefab: {fileID: 5952340698973276538, guid: b6935b78f011d00428acb3e75e3cfbca, type: 3}
+  listShooterWolves: []
+  initialShooterWolves: 10
+  wolfShooterPrefab: {fileID: 4764357184111727260, guid: 6f512a43043098144a8463f217417ca3, type: 3}

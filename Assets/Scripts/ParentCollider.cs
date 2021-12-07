@@ -27,7 +27,7 @@ public class ParentCollider : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= timerMaxCount)
             {
-                objectPooler.FindWolfPool(childSpawn);
+                objectPooler.GliderWolfPool(childSpawn);
                 timer = 0;
             }
         }

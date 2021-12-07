@@ -7,6 +7,8 @@ public class EndGameUI : MonoBehaviour
 {
     private PlayerManager playerInfo;
     public GameObject gameOverPanel, winGamePanel;
+    private PlayerAudio audioPlay;
+
 
     #region Singleton
     public static EndGameUI instance;
@@ -19,6 +21,8 @@ public class EndGameUI : MonoBehaviour
     private void Start()
     {
         playerInfo = FindObjectOfType<PlayerManager>();
+        audioPlay = FindObjectOfType<PlayerAudio>();
+
     }
     public void ShowGameOver()
     {

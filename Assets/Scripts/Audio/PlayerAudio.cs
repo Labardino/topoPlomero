@@ -6,10 +6,22 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class PlayerAudio : MonoBehaviour
 {
+    #region Singleton
+    public static PlayerAudio instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    #endregion
     public AudioSource playerSound;
 
     public AudioClip[] clipSounds;
-    
+    private PlayerManager playerInfo;
+
+    private void Start()
+    {
+        playerInfo = FindObjectOfType<PlayerManager>();
+    }
     private void stepSound()
     {
         playerSound.PlayOneShot(clipSounds[0]);
@@ -31,6 +43,9 @@ public class PlayerAudio : MonoBehaviour
         playerSound.PlayOneShot(clipSounds[0]);
     }
 
-
+    public void hurtSound()
+    {
+        playerSound.PlayOneShot(clipSounds[3]);
+    }
 
 }

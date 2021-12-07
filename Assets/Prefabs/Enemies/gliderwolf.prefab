@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf1dc66f67cd7145ae13444ac1942da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 0}
+  bombPrefab: {fileID: 573108136161213018, guid: dca23068df1cfff4797afeb70350faf4, type: 3}
   timerMaxCount: 1
   bombNew: {fileID: 0}
 --- !u!1 &4416585751466487967

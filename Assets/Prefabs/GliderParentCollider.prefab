@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   childSpawn: {fileID: 5373441433734718308}
   timerMaxCount: 5
+  instanceCollider: {fileID: 5373441433213901941}
 --- !u!1 &5373441433734718331
 GameObject:
   m_ObjectHideFlags: 0

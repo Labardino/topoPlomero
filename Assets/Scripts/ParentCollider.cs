@@ -6,7 +6,7 @@ public class ParentCollider : MonoBehaviour
 {
     public GliderWolfCreator childSpawn;
     public float timerMaxCount;
-
+    public Collider instanceCollider;
 
     [HideInInspector]
     private float timer;
@@ -52,9 +52,12 @@ public class ParentCollider : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Glider"))
+        if (other==instanceCollider)
         {
-            other.gameObject.SetActive(false);
+            if (other.gameObject.layer == LayerMask.NameToLayer("Glider"))
+            {
+                other.gameObject.SetActive(false);
+            }
         }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))

@@ -774,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 0}
-  timerMaxCount: 1.5
+  timerMaxCount: 1
   bombNew: {fileID: 0}
 --- !u!1 &4416585751466487967
 GameObject:
@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf7af413ef266bf4cb8c05fd6e73812b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyingSpeed: 4
+  flyingSpeed: 7
 --- !u!114 &1925559716036135449
 MonoBehaviour:
   m_ObjectHideFlags: 0

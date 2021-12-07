@@ -10,6 +10,7 @@ public class BombExplosion : MonoBehaviour
     private float centerModifierX, centerModifierZ;
     public PlayerManager playerInfo;
     public HUD hudInfo;
+    public GameObject expParticle;
 
     public const float modifierValue=1.0f;
 
@@ -47,6 +48,7 @@ public class BombExplosion : MonoBehaviour
                 if (nearby.gameObject.layer == LayerMask.NameToLayer("Player") && rb)
                 {
                     rb.AddExplosionForce(explosionForce, transform.position, spherecastRadio,3.0f);
+                    expParticle.Se
                     playerInfo.RemoveOneLife();
                     hudInfo.UpdatePlayerLives();
                     //rb.AddExplosionForce(explosionForce, rb.transform.position, spherecastRadio);

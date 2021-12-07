@@ -62,6 +62,7 @@ public class Breakable : MonoBehaviour
 
     public virtual void AboveInteraction(Collision other)
     {
+        Debug.Log("BugRaro");
         CreateCereal();
         DestroyObject(other);
     }

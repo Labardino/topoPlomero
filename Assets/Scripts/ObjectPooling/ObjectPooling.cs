@@ -8,7 +8,7 @@ public class ObjectPooling : MonoBehaviour
     [HideInInspector]
     public List<GameObject> listBombs;
     public int initialBombs;
-    public GameObject bombPrefab;
+    public GameObject bombPrefab, bombActive;
     private Rigidbody rigiBomb;
 
     //BULLET VARIABLES
@@ -16,14 +16,14 @@ public class ObjectPooling : MonoBehaviour
     public List<GameObject> listBullets;
     [Space]
     public int initialBullets;
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefab, bulletActive;
 
     //CEREAL VARIABLES
     [HideInInspector]
     public List<GameObject> listCereals;
     [Space]
     public int initialCereals;
-    public GameObject cerealPrefab;
+    public GameObject cerealPrefab, cerealActive, cerealoActive;
 
 
     //WOLF VARIABLES
@@ -31,21 +31,21 @@ public class ObjectPooling : MonoBehaviour
     public List<GameObject> listGliderWolves;
     [Space]
     public int initialGliderWolves;
-    public GameObject wolfGliderPrefab;
+    public GameObject wolfGliderPrefab, gliderActive;
 
     //WOLF VARIABLES
     [HideInInspector]
     public List<GameObject> listShooterWolves;
     [Space]
     public int initialShooterWolves;
-    public GameObject wolfShooterPrefab;
+    public GameObject wolfShooterPrefab, shooterActive;
 
     //Explosion VARIABLES
     [HideInInspector]
     public List<GameObject> listExplosions;
     [Space]
     public int initialExplosions;
-    public GameObject explosionPrefab;
+    public GameObject explosionPrefab, explosionActive;
 
 
     //POOLING VARIABLES
@@ -67,7 +67,7 @@ public class ObjectPooling : MonoBehaviour
         InitialBullets();
         InitialCereals();
         InitialGliderWolves();
-        //InitialShooterWolves();
+        InitialShooterWolves();
     }
 
     public void InitialBombs()
@@ -126,11 +126,11 @@ public class ObjectPooling : MonoBehaviour
                 listBombs[i].transform.SetPositionAndRotation(new Vector3(bombo.gameObject.transform.position.x,
                                                                         bombo.gameObject.transform.position.y - 0.5f,
                                                                         bombo.gameObject.transform.position.z), Quaternion.identity);
-                objectActive = listBombs[i];
-                rigiBomb = objectActive.GetComponent<Rigidbody>();
+                bombActive = listBombs[i];
+                rigiBomb = bombActive.GetComponent<Rigidbody>();
                 rigiBomb.velocity = Vector3.zero;
                 rigiBomb.angularVelocity = Vector3.zero;
-                objectActive.SetActive(true);
+                bombActive.SetActive(true);
                 found = true;
                 break;
             }
@@ -150,8 +150,8 @@ public class ObjectPooling : MonoBehaviour
                 listGliderWolves[i].transform.SetPositionAndRotation(new Vector3(wolfo.gameObject.transform.position.x,
                                                                         wolfo.gameObject.transform.position.y,
                                                                         wolfo.gameObject.transform.position.z), wolfo.transform.rotation);
-                objectActive = listGliderWolves[i];
-                objectActive.SetActive(true);
+                gliderActive = listGliderWolves[i];
+                gliderActive.SetActive(true);
                 found = true;
                 break;
             }
@@ -172,17 +172,17 @@ public class ObjectPooling : MonoBehaviour
                 listShooterWolves[i].transform.SetPositionAndRotation(new Vector3(wolfoShoot.gameObject.transform.position.x,
                                                                         wolfoShoot.gameObject.transform.position.y,
                                                                         wolfoShoot.gameObject.transform.position.z), wolfoShoot.transform.rotation);
-                objectActive = listShooterWolves[i];
-                objectActive.SetActive(true);
+                shooterActive = listShooterWolves[i];
+                shooterActive.SetActive(true);
                 found = true;
                 break;
             }
         }
         if (!found)
         {
-            objectActive = wolfoShoot.createShooterWolf();
+            shooterActive = wolfoShoot.createShooterWolf();
         }
-        return objectActive;
+        return shooterActive;
     }
     public void BulletPool(BulletCreator bulleto, BulletPos bulletPos)
     {
@@ -192,8 +192,8 @@ public class ObjectPooling : MonoBehaviour
             if (!listBullets[i].activeInHierarchy)
             {
                 listBullets[i].transform.SetPositionAndRotation(bulletPos.BazookaPos(), bulleto.gameObject.transform.rotation);
-                objectActive = listBullets[i];
-                objectActive.SetActive(true);
+                bulletActive = listBullets[i];
+                bulletActive.SetActive(true);
                 found = true;
                 break;
             }
@@ -212,8 +212,8 @@ public class ObjectPooling : MonoBehaviour
             if (!listCereals[i].activeInHierarchy)
             {
                 listCereals[i].transform.SetPositionAndRotation(cerealo.RandomPosition(), Quaternion.Euler(-90, 0, 0));
-                objectActive = listCereals[i];
-                objectActive.SetActive(true);
+                cerealActive = listCereals[i];
+                cerealActive.SetActive(true);
                 found = true;
                 foundCereals++;
                 if (foundCereals == qty)
@@ -237,8 +237,8 @@ public class ObjectPooling : MonoBehaviour
             if (!listCereals[i].activeInHierarchy)
             {
                 listCereals[i].transform.SetPositionAndRotation(cerealo.RandomPosition(), Quaternion.Euler(-90, 0, 0));
-                objectActive = listCereals[i];
-                objectActive.SetActive(true);
+                cerealoActive = listCereals[i];
+                cerealoActive.SetActive(true);
                 found = true;
                 break;
             }
@@ -257,8 +257,8 @@ public class ObjectPooling : MonoBehaviour
             if (!listCereals[i].activeInHierarchy)
             {
                 listCereals[i].transform.SetPositionAndRotation(explosio.transform.position, Quaternion.identity);
-                objectActive = listCereals[i];
-                objectActive.SetActive(true);
+                explosionActive = listCereals[i];
+                explosionActive.SetActive(true);
                 found = true;
                 break;
             }

@@ -6,7 +6,7 @@ public class ShooterParentCollider : MonoBehaviour
 {
     public ShooterWolfCreator[] childSpawn;
     private ObjectPooling objectPooler;
-    public GameObject instanceShooter;
+    public GameObject[] instanceShooter;
 
     private void Start()
     {
@@ -21,20 +21,19 @@ public class ShooterParentCollider : MonoBehaviour
         {
             for (int i = 0; i < childSpawn.Length; i++)
             {
-               instanceShooter = objectPooler.ShooterWolfPool(childSpawn[i]);
+               instanceShooter[i] = objectPooler.ShooterWolfPool(childSpawn[i]);
             }
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Glider"))
-        {
-            other.gameObject.SetActive(false);
-        }
-
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            instanceShooter.gameObject.SetActive(false);
+            for (int i = 0; i < instanceShooter.Length; i++)
+            {
+                Debug.Log("dede");
+                instanceShooter[i].SetActive(false);
+            }
         }
     }
     public void RequestPool()
@@ -44,6 +43,7 @@ public class ShooterParentCollider : MonoBehaviour
     public void RequestChild()
     {
         childSpawn = GetComponentsInChildren<ShooterWolfCreator>();
+        instanceShooter = new GameObject[childSpawn.Length];
     }
 
 }

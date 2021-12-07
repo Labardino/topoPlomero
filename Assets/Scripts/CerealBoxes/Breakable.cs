@@ -47,13 +47,18 @@ public class Breakable : MonoBehaviour
             }
         }
     }
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionStay(Collision other)
     {
-        if (PlayerMovement.spinning || PlayerMovement.sliding)
+
+        if (other.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            CreateCereal();
-            Destroy(this.gameObject);
+            if (PlayerMovement.spinning || PlayerMovement.sliding)
+            {
+                CreateCereal();
+                Destroy(this.gameObject);
+            }
         }
+
     }
 
     public virtual void AboveInteraction(Collision other)

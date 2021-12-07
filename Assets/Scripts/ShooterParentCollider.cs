@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShooterParentCollider : MonoBehaviour
 {
-    public ShooterWolfCreator childSpawn;
+    public ShooterWolfCreator[] childSpawn;
     private ObjectPooling objectPooler;
     public GameObject instanceShooter;
 
@@ -16,8 +16,14 @@ public class ShooterParentCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-            instanceShooter = objectPooler.ShooterWolfPool(childSpawn);
+        {
+            for (int i = 0; i < childSpawn.Length; i++)
+            {
+               instanceShooter = objectPooler.ShooterWolfPool(childSpawn[i]);
+            }
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -37,7 +43,7 @@ public class ShooterParentCollider : MonoBehaviour
     }
     public void RequestChild()
     {
-        childSpawn = GetComponentInChildren<ShooterWolfCreator>();
+        childSpawn = GetComponentsInChildren<ShooterWolfCreator>();
     }
 
 }

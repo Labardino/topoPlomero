@@ -5,18 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class SceneManage : MonoBehaviour
 {
-    public PlayerManager playerInfo;
+    private PlayerManager playerInfo;
+    private EndGameUI endPanel;
 
     private void Start()
     {
         playerInfo = FindObjectOfType<PlayerManager>();
+        endPanel = FindObjectOfType<EndGameUI>();
     }
 
     private void Update()
     {
         if(playerInfo.livesPlayer <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            RestartGame();
         }
+    }
+
+    public void RestartGame()
+    {
+        endPanel.ToggleGameOver();
+        //Time.timeScale = 0;
+        StartCoroutine(SceneDelay(SceneManager.GetActiveScene()));
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    IEnumerator SceneDelay(Scene sceneo)
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(sceneo.name);
     }
 }

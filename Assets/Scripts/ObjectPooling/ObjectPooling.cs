@@ -28,10 +28,17 @@ public class ObjectPooling : MonoBehaviour
 
     //WOLF VARIABLES
     [HideInInspector]
-    public List<GameObject> listWolves;
+    public List<GameObject> listGliderWolves;
     [Space]
-    public int initialWolves;
-    public GameObject wolfPrefab;
+    public int initialGliderWolves;
+    public GameObject wolfGliderPrefab;
+
+    //WOLF VARIABLES
+    [HideInInspector]
+    public List<GameObject> listShooterWolves;
+    [Space]
+    public int initialShooterWolves;
+    public GameObject wolfShooterPrefab;
 
 
     //POOLING VARIABLES
@@ -52,7 +59,8 @@ public class ObjectPooling : MonoBehaviour
         InitialBombs();
         InitialBullets();
         InitialCereals();
-        InitialWolves();
+        InitialGliderWolves();
+        //InitialShooterWolves();
     }
 
     public void InitialBombs()
@@ -82,12 +90,21 @@ public class ObjectPooling : MonoBehaviour
             objectActive.SetActive(false);
         }
     }
-    public void InitialWolves()
+    public void InitialGliderWolves()
     {
-        for (int i = 0; i < initialWolves; i++)
+        for (int i = 0; i < initialGliderWolves; i++)
         {
-            objectActive = Instantiate(wolfPrefab, Vector3.zero, Quaternion.identity);
-            listWolves.Add(objectActive);
+            objectActive = Instantiate(wolfGliderPrefab, Vector3.zero, Quaternion.identity);
+            listGliderWolves.Add(objectActive);
+            objectActive.SetActive(false);
+        }
+    }
+    public void InitialShooterWolves()
+    {
+        for (int i = 0; i < initialShooterWolves; i++)
+        {
+            objectActive = Instantiate(wolfShooterPrefab, Vector3.zero, Quaternion.identity);
+            listShooterWolves.Add(objectActive);
             objectActive.SetActive(false);
         }
     }
@@ -116,17 +133,17 @@ public class ObjectPooling : MonoBehaviour
             bombo.createBomb();
         }
     }
-    public void FindWolfPool(GliderWolfCreator wolfo)
+    public void GliderWolfPool(GliderWolfCreator wolfo)
     {
         found = false;
-        for (int i = 0; i < listWolves.Count; i++)
+        for (int i = 0; i < listGliderWolves.Count; i++)
         {
-            if (!listWolves[i].activeInHierarchy)
+            if (!listGliderWolves[i].activeInHierarchy)
             {
-                listWolves[i].transform.SetPositionAndRotation(new Vector3(wolfo.gameObject.transform.position.x,
+                listGliderWolves[i].transform.SetPositionAndRotation(new Vector3(wolfo.gameObject.transform.position.x,
                                                                         wolfo.gameObject.transform.position.y,
                                                                         wolfo.gameObject.transform.position.z), wolfo.transform.rotation);
-                objectActive = listWolves[i];
+                objectActive = listGliderWolves[i];
                 objectActive.SetActive(true);
                 found = true;
                 break;
@@ -134,8 +151,31 @@ public class ObjectPooling : MonoBehaviour
         }
         if (!found)
         {
-            wolfo.createBomb();
+            wolfo.createGliderWolf();
         }
+    }
+
+    public GameObject ShooterWolfPool(ShooterWolfCreator wolfoShoot)
+    {
+        found = false;
+        for (int i = 0; i < listShooterWolves.Count; i++)
+        {
+            if (!listShooterWolves[i].activeInHierarchy)
+            {
+                listShooterWolves[i].transform.SetPositionAndRotation(new Vector3(wolfoShoot.gameObject.transform.position.x,
+                                                                        wolfoShoot.gameObject.transform.position.y,
+                                                                        wolfoShoot.gameObject.transform.position.z), wolfoShoot.transform.rotation);
+                objectActive = listShooterWolves[i];
+                objectActive.SetActive(true);
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            objectActive = wolfoShoot.createShooterWolf();
+        }
+        return objectActive;
     }
     public void BulletPool(BulletCreator bulleto, BulletPos bulletPos)
     {

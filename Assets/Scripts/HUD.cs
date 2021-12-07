@@ -40,11 +40,11 @@ public class HUD : MonoBehaviour
     {
         textCereal.gameObject.SetActive(true);
         imageCereal.gameObject.SetActive(true);
+        textCereal.text = "X " + playerInfo.playerCereals;
         if (playerInfo.ExchangeCerealForLife())
         {
             UpdatePlayerLives();
         }
-        textCereal.text = "X " + playerInfo.playerCereals;
         StartCoroutine(ShowHideInfo(textCereal, imageCereal));
     }
 

@@ -16,6 +16,11 @@ public class ExplosionCreator : MonoBehaviour
         RequestPool();
     }
 
+    public void PoolExplosion()
+    {
+        objectPooler.ExplosionPool(this);
+    }
+
     public void createExplosion()
     {
         objectPooler.listBombs.Add(Instantiate(explosionPrefab, ObjectPosition(), Quaternion.identity));

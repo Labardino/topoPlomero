@@ -11,13 +11,15 @@ public class BombExplosion : MonoBehaviour
     public PlayerManager playerInfo;
     public HUD hudInfo;
     public GameObject expParticle;
+    private ExplosionCreator explosionFX;
 
-    public const float modifierValue=1.0f;
+    public const float modifierValue = 1.0f;
 
     private void OnEnable()
     {
         playerInfo = FindObjectOfType<PlayerManager>();
         hudInfo = FindObjectOfType<HUD>();
+        explosionFX = GetComponent<ExplosionCreator>();
     }
     private void Update()
     {
@@ -25,6 +27,7 @@ public class BombExplosion : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        explosionFX.PoolExplosion();
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Terrain"))
         {
             Explosion();
@@ -37,7 +40,6 @@ public class BombExplosion : MonoBehaviour
 
     public void Explosion()
     {
-        //Ray raySphere = new Ray(Vector3.zero, Vector3.one);
         Collider[] collisionList;
         collisionList = Physics.OverlapSphere(transform.position, spherecastRadio);
         if(collisionList.Length>0)
@@ -58,7 +60,6 @@ public class BombExplosion : MonoBehaviour
     }
     public void ExplosionPlayer()
     {
-        //Ray raySphere = new Ray(Vector3.zero, Vector3.one);
         Collider[] collisionList;
         collisionList = Physics.OverlapSphere(transform.position, spherecastRadio);
         if (collisionList.Length > 0)

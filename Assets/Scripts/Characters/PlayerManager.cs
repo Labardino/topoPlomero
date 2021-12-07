@@ -10,9 +10,9 @@ public class PlayerManager : MonoBehaviour
     {
         instance = this;
         Time.timeScale = 1;
-        livesPlayer = 69;
+        livesPlayer = 5;
         playerCereals = 0;
-        maxCereals = 30;
+        maxCereals = 20;
         winGame = false;
     }
     #endregion
@@ -20,6 +20,12 @@ public class PlayerManager : MonoBehaviour
     public GameObject player;
     public int livesPlayer, playerCereals, maxCereals;
     public bool winGame;
+    private PlayerAudio audioPlay;
+
+    private void Start()
+    {
+        audioPlay = FindObjectOfType<PlayerAudio>();
+    }
 
     private void Update()
     {
@@ -32,6 +38,7 @@ public class PlayerManager : MonoBehaviour
     public void RemoveOneLife() 
     {
         livesPlayer--;
+        audioPlay.hurtSound();
     }
 
     public void RemoveAllLives()

@@ -20,15 +20,14 @@ public class EndGameUI : MonoBehaviour
     {
         playerInfo = FindObjectOfType<PlayerManager>();
     }
-    public void ToggleGameOver()
+    public void ShowGameOver()
     {
         gameOverPanel.SetActive(true);
     }
 
-    public void ToggleWinGame()
+    public void ShowWinGame()
     {
         winGamePanel.SetActive(true);
+        Time.timeScale = 0;
     }
-
-
 }

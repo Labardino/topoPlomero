@@ -9,17 +9,27 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        //Time.timeScale = 1;
+        Time.timeScale = 1;
         livesPlayer = 3;
         playerCereals = 0;
         maxCereals = 69;
+        winGame = false;
     }
     #endregion
 
     public GameObject player;
     public int livesPlayer, playerCereals, maxCereals;
+    public bool winGame;
 
-    public void RemoveOneLife()
+    private void Update()
+    {
+        ExchangeCerealForLife();
+    }
+    public void FinishedLevel()
+    {
+        winGame = true;
+    }
+    public void RemoveOneLife() 
     {
         livesPlayer--;
     }
@@ -31,10 +41,6 @@ public class PlayerManager : MonoBehaviour
     public void AddOneCereal()
     {
         playerCereals++;
-    }
-    private void Update()
-    {
-        ExchangeCerealForLife();
     }
 
     public bool ExchangeCerealForLife()

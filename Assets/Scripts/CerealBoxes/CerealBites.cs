@@ -36,10 +36,18 @@ public class CerealBites : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(WaitPickup());
+        StartCoroutine(NoPickup());
     }
     IEnumerator WaitPickup()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         pickable = true;
     }
+
+    IEnumerator NoPickup()
+    {
+        yield return new WaitForSeconds(30f);
+        this.gameObject.SetActive(false);
+    }
+
 }

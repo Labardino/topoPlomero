@@ -18,15 +18,19 @@ public class SceneManage : MonoBehaviour
     {
         if(playerInfo.livesPlayer <= 0)
         {
-            RestartGame();
+            LoseLevel();
         }
+    }
+
+    public void LoseLevel()
+    {
+        endPanel.ShowGameOver();
+        StartCoroutine(SceneDelay(SceneManager.GetActiveScene()));
     }
 
     public void RestartGame()
     {
-        endPanel.ToggleGameOver();
-        //Time.timeScale = 0;
-        StartCoroutine(SceneDelay(SceneManager.GetActiveScene()));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void QuitGame()

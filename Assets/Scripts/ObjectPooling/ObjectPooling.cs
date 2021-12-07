@@ -213,9 +213,12 @@ public class ObjectPooling : MonoBehaviour
                     break;
             }
         }
-        if (!found)
+        if (!found && foundCereals < qty)
         {
-            cerealo.createCereal();
+            for (int i = 0; i < qty - foundCereals; i++)
+            {
+                cerealo.createCereal();
+            }
         }
     }
 

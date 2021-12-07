@@ -31,7 +31,6 @@ public class ShooterParentCollider : MonoBehaviour
         {
             for (int i = 0; i < instanceShooter.Length; i++)
             {
-                Debug.Log("dede");
                 instanceShooter[i].SetActive(false);
             }
         }

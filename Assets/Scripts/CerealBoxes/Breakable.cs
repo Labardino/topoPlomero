@@ -22,16 +22,15 @@ public class Breakable : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        vectorPoint = other.contacts[0].point;
-        angleCollision= Vector3.Angle(vectorPoint - this.transform.position, other.transform.up);
-        animcharacter = other.gameObject.GetComponentInChildren<Animator>();
-        //Debug.Log(angleCollision);
-
-
         if (other.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            vectorPoint = other.contacts[0].point;
+            angleCollision= Vector3.Angle(vectorPoint - this.transform.position, other.transform.up);
+            animcharacter = other.gameObject.GetComponentInChildren<Animator>();
+            //Debug.Log(angleCollision);
+
             //jump above
-            if (angleCollision < 60 && !PlayerMovement.isGrounded)
+            if (angleCollision <= 19 && !PlayerMovement.isGrounded)
             {
                 AboveInteraction(other);
             }
@@ -62,7 +61,6 @@ public class Breakable : MonoBehaviour
 
     public virtual void AboveInteraction(Collision other)
     {
-        Debug.Log("BugRaro");
         CreateCereal();
         DestroyObject(other);
     }

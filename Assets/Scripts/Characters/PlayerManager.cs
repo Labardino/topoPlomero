@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        //Time.timeScale = 1;
         livesPlayer = 3;
         playerCereals = 0;
         maxCereals = 69;

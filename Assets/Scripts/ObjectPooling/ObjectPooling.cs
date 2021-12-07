@@ -66,6 +66,7 @@ public class ObjectPooling : MonoBehaviour
         InitialBombs();
         InitialBullets();
         InitialCereals();
+        InitialExplosions();
         InitialGliderWolves();
         InitialShooterWolves();
     }
@@ -94,6 +95,15 @@ public class ObjectPooling : MonoBehaviour
         {
             objectActive = Instantiate(cerealPrefab, Vector3.zero, Quaternion.Euler(-90,0,0));
             listCereals.Add(objectActive);
+            objectActive.SetActive(false);
+        }
+    }
+    public void InitialExplosions()
+    {
+        for (int i = 0; i < initialExplosions; i++)
+        {
+            objectActive = Instantiate(explosionPrefab, Vector3.zero, Quaternion.identity);
+            listExplosions.Add(objectActive);
             objectActive.SetActive(false);
         }
     }
@@ -254,10 +264,10 @@ public class ObjectPooling : MonoBehaviour
         found = false;
         for (int i = 0; i < listExplosions.Count; i++)
         {
-            if (!listCereals[i].activeInHierarchy)
+            if (!listExplosions[i].activeInHierarchy)
             {
-                listCereals[i].transform.SetPositionAndRotation(explosio.transform.position, Quaternion.identity);
-                explosionActive = listCereals[i];
+                listExplosions[i].transform.SetPositionAndRotation(explosio.transform.position, Quaternion.identity);
+                explosionActive = listExplosions[i];
                 explosionActive.SetActive(true);
                 found = true;
                 break;

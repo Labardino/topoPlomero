@@ -5,7 +5,6 @@ using UnityEngine;
 public class Breakable : MonoBehaviour
 {
     Vector3 vectorPoint;
-    [HideInInspector]
     public int cerealQty;
 
     private float angleCollision;

@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         {
             spinning = true;
             animcharacter.SetTrigger("spin");
-            StartCoroutine(ActionTime(spinning));
+            StartCoroutine(SpinningTime());
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -81,14 +81,19 @@ public class PlayerMovement : MonoBehaviour
             {
                 sliding = true;
                 animcharacter.SetTrigger("slide");
-                StartCoroutine(ActionTime(sliding));
+                StartCoroutine(SlidingTime());
             }
         }
     }
 
-    IEnumerator ActionTime(bool action)
+    IEnumerator SpinningTime()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
+        spinning = sliding = false;
+    }
+    IEnumerator SlidingTime()
+    {
+        yield return new WaitForSeconds(0.8f);
         spinning = sliding = false;
     }
 

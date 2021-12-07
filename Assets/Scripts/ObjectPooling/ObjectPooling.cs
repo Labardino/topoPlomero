@@ -40,6 +40,13 @@ public class ObjectPooling : MonoBehaviour
     public int initialShooterWolves;
     public GameObject wolfShooterPrefab;
 
+    //Explosion VARIABLES
+    [HideInInspector]
+    public List<GameObject> listExplosions;
+    [Space]
+    public int initialExplosions;
+    public GameObject explosionPrefab;
+
 
     //POOLING VARIABLES
     private GameObject objectActive;
@@ -213,7 +220,7 @@ public class ObjectPooling : MonoBehaviour
                     break;
             }
         }
-        if (!found && foundCereals < qty)
+        if (foundCereals < qty)
         {
             for (int i = 0; i < qty - foundCereals; i++)
             {
@@ -242,5 +249,24 @@ public class ObjectPooling : MonoBehaviour
         }
     }
 
+    public void ExplosionPool(ExplosionCreator explosio)
+    {
+        found = false;
+        for (int i = 0; i < listExplosions.Count; i++)
+        {
+            if (!listCereals[i].activeInHierarchy)
+            {
+                listCereals[i].transform.SetPositionAndRotation(explosio.transform.position, Quaternion.identity);
+                objectActive = listCereals[i];
+                objectActive.SetActive(true);
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            explosio.createExplosion();
+        }
+    }
 
 }

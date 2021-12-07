@@ -10,9 +10,9 @@ public class PlayerManager : MonoBehaviour
     {
         instance = this;
         //Time.timeScale = 1;
-        livesPlayer = 3;
+        livesPlayer = 5;
         playerCereals = 0;
-        maxCereals = 69;
+        maxCereals = 25;
     }
     #endregion
 

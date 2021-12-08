@@ -12556,6 +12556,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 472228849829314803, guid: 9468a738b6f839846ac46186dc37f10d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 472228849829314803, guid: 9468a738b6f839846ac46186dc37f10d, type: 3}
+      propertyPath: m_OverrideSorting
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 529605424291336282, guid: 9468a738b6f839846ac46186dc37f10d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
@@ -12648,6 +12656,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3946103355182280192, guid: 9468a738b6f839846ac46186dc37f10d, type: 3}
+      propertyPath: m_OverrideSorting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946103355182280195, guid: 9468a738b6f839846ac46186dc37f10d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5250131290911514960, guid: 9468a738b6f839846ac46186dc37f10d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -12655,6 +12671,14 @@ PrefabInstance:
     - target: {fileID: 6711333013122207449, guid: 9468a738b6f839846ac46186dc37f10d, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053008648181609020, guid: 9468a738b6f839846ac46186dc37f10d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053008648181609020, guid: 9468a738b6f839846ac46186dc37f10d, type: 3}
+      propertyPath: m_OverrideSorting
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9468a738b6f839846ac46186dc37f10d, type: 3}
